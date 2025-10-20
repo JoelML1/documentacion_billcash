@@ -1,0 +1,322 @@
+/* Estilos personalizados de BillCash */
+
+/* Colores principales de BillCash - Ajustados según la app */
+:root {
+    --billcash-primary: #3b6b6a;
+    --billcash-secondary: #4d7c7b;
+    --billcash-accent: #5a8d8c;
+    --billcash-dark: #2a4f4e;
+    --billcash-light: #e8f5f4;
+    --billcash-white: #ffffff;
+    --billcash-text: #2c3e50;
+    --billcash-bg-gradient: linear-gradient(135deg, #3b6b6a 0%, #4d7c7b 50%, #5a8d8c 100%);
+}
+
+/* Estilos del body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--billcash-bg-gradient);
+    background-attachment: fixed;
+}
+
+/* Contenedor principal */
+.document {
+    background-color: var(--billcash-white);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    margin: 20px 20px 20px 280px;
+    padding: 30px;
+    max-width: calc(100% - 320px);
+}
+
+/* Encabezados */
+h1 {
+    color: var(--billcash-primary) !important;
+    font-weight: 700;
+    border-bottom: 3px solid var(--billcash-accent);
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+h2 {
+    color: var(--billcash-secondary) !important;
+    font-weight: 600;
+    border-left: 5px solid var(--billcash-accent);
+    padding-left: 15px;
+    margin-top: 25px;
+}
+
+h3 {
+    color: var(--billcash-accent) !important;
+    font-weight: 600;
+}
+
+/* Notas y advertencias */
+.admonition {
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-left: 5px solid var(--billcash-accent);
+}
+
+.admonition.note {
+    background-color: var(--billcash-light);
+    border-left-color: var(--billcash-accent);
+}
+
+.admonition.warning {
+    background-color: #fff3cd;
+    border-left-color: #ffc107;
+}
+
+.admonition-title {
+    color: var(--billcash-primary);
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+/* Tablas */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+    background: var(--billcash-bg-gradient);
+    color: white;
+}
+
+table thead th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+table tbody tr:hover {
+    background-color: var(--billcash-light);
+}
+
+table tbody td {
+    padding: 12px 15px;
+}
+
+/* Listas */
+ul, ol {
+    line-height: 1.8;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* Imágenes */
+img {
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(45, 95, 93, 0.3);
+    margin: 20px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(45, 95, 93, 0.4);
+}
+
+/* Código y bloques de código */
+code {
+    background-color: var(--billcash-light);
+    color: var(--billcash-primary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+pre {
+    background-color: var(--billcash-dark);
+    color: #00ff00;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Enlaces */
+a {
+    color: var(--billcash-accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--billcash-secondary);
+    text-decoration: underline;
+}
+
+/* Sidebar */
+.sphinxsidebar {
+    background: var(--billcash-bg-gradient);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    width: 240px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+.sphinxsidebar h3 {
+    color: white !important;
+    border-bottom: 2px solid var(--billcash-accent);
+    padding-bottom: 10px;
+    margin-top: 15px;
+}
+
+.sphinxsidebar a {
+    color: white;
+    display: block;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sphinxsidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--billcash-light);
+    text-decoration: none;
+    transform: translateX(5px);
+}
+
+.sphinxsidebar ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+/* Logo en el sidebar */
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo a {
+    color: white;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Separadores horizontales */
+hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--billcash-accent), transparent);
+    margin: 30px 0;
+}
+
+/* Badges y etiquetas */
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background-color: var(--billcash-accent);
+    color: white;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 0 5px;
+}
+
+/* Botones de navegación */
+.related {
+    background: var(--billcash-bg-gradient);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-left: 280px;
+}
+
+.related a {
+    color: white;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--billcash-dark);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+}
+
+.footer a {
+    color: var(--billcash-accent);
+}
+
+/* Estilo para blockquotes */
+blockquote {
+    border-left: 5px solid var(--billcash-accent);
+    padding-left: 20px;
+    margin-left: 0;
+    background-color: var(--billcash-light);
+    padding: 15px 20px;
+    border-radius: 0 10px 10px 0;
+}
+
+/* Animaciones suaves */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Estilo del título principal del documento */
+.body > h1:first-child {
+    background: var(--billcash-bg-gradient);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(59, 107, 106, 0.3);
+    margin-bottom: 30px;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .document {
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    img {
+        border-radius: 10px;
+    }
+    
+    table {
+        font-size: 0.9em;
+    }
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilo de selección de texto */
+::selection {
+    background-color: var(--billcash-accent);
+    color: white;
+}
+
+::-moz-selection {
+    background-color: var(--billcash-accent);
+    color: white;
+}

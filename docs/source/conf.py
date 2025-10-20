@@ -26,3 +26,19 @@ language = 'es'
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
+
+# Archivos CSS personalizados
+html_css_files = [
+    'billcash_custom.css',
+]
+
+# Configuración del tema Alabaster con colores de BillCash
+html_theme_options = {
+    'logo_name': True,
+    'description': 'Sistema de gestión de pagos y facturación',
+    'github_user': 'JoelML1',
+    'github_repo': 'documentacion_billcash',
+    'github_button': True,
+    'github_type': 'star',
+    'fixed_sidebar': True,
+}

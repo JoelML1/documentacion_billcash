@@ -449,4 +449,5 @@ Para más información sobre BillCash:
    :caption: Documentación:
 
    casos_uso
+   manual_index
 

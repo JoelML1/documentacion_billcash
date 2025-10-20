@@ -17,7 +17,7 @@ organizados por actores (Usuario y Administrador):
    :alt: Diagrama de Casos de Uso de BillCash
 
 .. note::
-   Para visualizar el diagrama, coloque la imagen en: ``docs/source/_static/billcash_casos_uso.png``
+   Visualizar el diagrama
 
 |
 
