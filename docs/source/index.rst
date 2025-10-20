@@ -1,21 +1,20 @@
-.. BillCash - Documentación de Requisitos Funcionales
+.. BillCash - Documentación del Sistema
 
 ========================================
 BillCash - Documentación del Sistema
 ========================================
 
-.. image:: https://img.shields.io/badge/version-1.0.0-blue.svg
-   :alt: Version 1.0.0
+.. raw:: html
 
-.. image:: https://img.shields.io/badge/status-en%20desarrollo-yellow.svg
-   :alt: En Desarrollo
+   <div style="margin-bottom: 20px;">
+      <img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version 1.0.0" style="margin-right: 10px;">
+      <img src="https://img.shields.io/badge/status-en%20desarrollo-yellow.svg" alt="En Desarrollo">
+   </div>
 
 Bienvenido a la Documentación de BillCash
 ==========================================
 
-**BillCash** es un sistema integral de gestión de pagos y facturación diseñado para facilitar 
-el control financiero, procesamiento de transacciones y generación de reportes para empresas 
-de todos los tamaños.
+**BillCash** es un sistema integral de gestión de pagos y facturación diseñado para facilitar el control financiero, procesamiento de transacciones y generación de reportes para empresas de todos los tamaños.
 
 .. note::
    Esta documentación describe los requisitos funcionales del sistema BillCash v1.0.0
@@ -438,12 +437,16 @@ Contacto y Soporte
 Para más información sobre BillCash:
 
 * **Email:** soporte@billcash.com
-* **Teléfono:** +52 (55) 1234-5678
+* **Teléfono:** +57 318-428-6954
 * **Sitio web:** https://www.billcash.com
 * **Documentación:** https://docs.billcash.com
 
+Índice de Contenidos
+====================
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contenidos:
-   :hidden:
+   :caption: Documentación:
+
+   casos_uso
 
