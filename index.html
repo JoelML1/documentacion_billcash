@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>BillCash - Documentación del Sistema &#8212; documentación de BillCash - 1.0.0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=f6a572b4" />
+    <link rel="stylesheet" type="text/css" href="_static/billcash_custom.css?v=692f297f" />
+    <script src="_static/documentation_options.js?v=36c4ab74"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=f85f4cfb"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Casos de Uso - BillCash" href="casos_uso.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">BillCash</a></h1>
+
+
+
+<p class="blurb">Sistema de gestión de pagos y facturación</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=JoelML1&repo=documentacion_billcash&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegación</h3>
+<p class="caption" role="heading"><span class="caption-text">Documentación:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="casos_uso.html">Casos de Uso - BillCash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual_index.html">Manual de Usuario - BillCash</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="casos_uso.html" title="próximo capítulo">Casos de Uso - BillCash</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="billcash-documentacion-del-sistema">
+<h1>BillCash - Documentación del Sistema<a class="headerlink" href="#billcash-documentacion-del-sistema" title="Link to this heading">¶</a></h1>
+<div style="margin-bottom: 20px;">
+   <img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version 1.0.0" style="margin-right: 10px;">
+   <img src="https://img.shields.io/badge/status-en%20desarrollo-yellow.svg" alt="En Desarrollo">
+</div><section id="bienvenido-a-la-documentacion-de-billcash">
+<h2>Bienvenido a la Documentación de BillCash<a class="headerlink" href="#bienvenido-a-la-documentacion-de-billcash" title="Link to this heading">¶</a></h2>
+<p><strong>BillCash</strong> es un sistema integral de gestión de pagos y facturación diseñado para facilitar el control financiero, procesamiento de transacciones y generación de reportes para empresas de todos los tamaños.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Esta documentación describe los requisitos funcionales del sistema BillCash v1.0.0</p>
+</div>
+</section>
+<section id="descripcion-general-del-proyecto">
+<h2>Descripción General del Proyecto<a class="headerlink" href="#descripcion-general-del-proyecto" title="Link to this heading">¶</a></h2>
+<p>BillCash es una plataforma que permite:</p>
+<ul class="simple">
+<li><p>Gestión completa de facturas y pagos</p></li>
+<li><p>Procesamiento de transacciones en tiempo real</p></li>
+<li><p>Generación de reportes financieros</p></li>
+<li><p>Administración de clientes y proveedores</p></li>
+<li><p>Integración con múltiples métodos de pago</p></li>
+<li><p>Automatización de procesos de cobro</p></li>
+</ul>
+</section>
+<section id="requisitos-funcionales">
+<h2>Requisitos Funcionales<a class="headerlink" href="#requisitos-funcionales" title="Link to this heading">¶</a></h2>
+<section id="gestion-de-usuarios">
+<h3>1. Gestión de Usuarios<a class="headerlink" href="#gestion-de-usuarios" title="Link to this heading">¶</a></h3>
+<section id="rf-001-registro-de-usuarios">
+<h4>RF-001: Registro de Usuarios<a class="headerlink" href="#rf-001-registro-de-usuarios" title="Link to this heading">¶</a></h4>
+<p>El sistema debe permitir el registro de nuevos usuarios con los siguientes datos:</p>
+<ul class="simple">
+<li><p>Nombre completo</p></li>
+<li><p>Correo electrónico (único)</p></li>
+<li><p>Contraseña (mínimo 8 caracteres, con requisitos de seguridad)</p></li>
+<li><p>Número de teléfono</p></li>
+<li><p>Tipo de usuario (Administrador, Usuario, Cliente)</p></li>
+</ul>
+<p><strong>Criterios de aceptación:</strong></p>
+<ul class="simple">
+<li><p>La contraseña debe contener al menos una mayúscula, una minúscula y un número</p></li>
+<li><p>El correo debe ser validado mediante un enlace de confirmación</p></li>
+<li><p>Los datos sensibles deben almacenarse encriptados</p></li>
+</ul>
+</section>
+<section id="rf-002-autenticacion-y-autorizacion">
+<h4>RF-002: Autenticación y Autorización<a class="headerlink" href="#rf-002-autenticacion-y-autorizacion" title="Link to this heading">¶</a></h4>
+<p>El sistema debe implementar:</p>
+<ul class="simple">
+<li><p>Login con correo electrónico y contraseña</p></li>
+<li><p>Recuperación de contraseña mediante correo electrónico</p></li>
+<li><p>Sistema de roles y permisos</p></li>
+<li><p>Sesiones seguras con tokens JWT</p></li>
+<li><p>Cierre de sesión automático después de 30 minutos de inactividad</p></li>
+</ul>
+</section>
+<section id="rf-003-gestion-de-perfiles">
+<h4>RF-003: Gestión de Perfiles<a class="headerlink" href="#rf-003-gestion-de-perfiles" title="Link to this heading">¶</a></h4>
+<p>Los usuarios deben poder:</p>
+<ul class="simple">
+<li><p>Ver y editar su información personal</p></li>
+<li><p>Cambiar su contraseña</p></li>
+<li><p>Configurar preferencias de notificaciones</p></li>
+<li><p>Ver historial de actividad</p></li>
+</ul>
+</section>
+</section>
+<section id="gestion-de-facturas">
+<h3>2. Gestión de Facturas<a class="headerlink" href="#gestion-de-facturas" title="Link to this heading">¶</a></h3>
+<section id="rf-004-creacion-de-facturas">
+<h4>RF-004: Creación de Facturas<a class="headerlink" href="#rf-004-creacion-de-facturas" title="Link to this heading">¶</a></h4>
+<p>El sistema debe permitir crear facturas con:</p>
+<ul class="simple">
+<li><p>Número de factura auto-incremental</p></li>
+<li><p>Fecha de emisión y vencimiento</p></li>
+<li><p>Datos del cliente (nombre, dirección, RFC/NIT)</p></li>
+<li><p>Lista de productos/servicios con:</p>
+<ul>
+<li><p>Descripción</p></li>
+<li><p>Cantidad</p></li>
+<li><p>Precio unitario</p></li>
+<li><p>Subtotal</p></li>
+</ul>
+</li>
+<li><p>Cálculo automático de impuestos (IVA, ISR)</p></li>
+<li><p>Total a pagar</p></li>
+<li><p>Notas adicionales</p></li>
+</ul>
+<p><strong>Ejemplo de estructura:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Factura</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cliente</span><span class="p">,</span> <span class="n">items</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">numero</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generar_numero</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fecha_emision</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cliente</span> <span class="o">=</span> <span class="n">cliente</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="n">items</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subtotal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calcular_subtotal</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">impuestos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calcular_impuestos</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">subtotal</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">impuestos</span>
+</pre></div>
+</div>
+</section>
+<section id="rf-005-consulta-de-facturas">
+<h4>RF-005: Consulta de Facturas<a class="headerlink" href="#rf-005-consulta-de-facturas" title="Link to this heading">¶</a></h4>
+<p>Los usuarios deben poder:</p>
+<ul class="simple">
+<li><p>Listar todas las facturas con filtros por:</p>
+<ul>
+<li><p>Estado (pendiente, pagada, vencida, cancelada)</p></li>
+<li><p>Fecha (rango)</p></li>
+<li><p>Cliente</p></li>
+<li><p>Monto</p></li>
+</ul>
+</li>
+<li><p>Ver detalle completo de cada factura</p></li>
+<li><p>Buscar facturas por número o nombre de cliente</p></li>
+</ul>
+</section>
+<section id="rf-006-edicion-y-cancelacion-de-facturas">
+<h4>RF-006: Edición y Cancelación de Facturas<a class="headerlink" href="#rf-006-edicion-y-cancelacion-de-facturas" title="Link to this heading">¶</a></h4>
+<p>El sistema debe permitir:</p>
+<ul class="simple">
+<li><p>Editar facturas en estado «borrador»</p></li>
+<li><p>Cancelar facturas con motivo justificado</p></li>
+<li><p>Generar notas de crédito para facturas canceladas</p></li>
+<li><p>Mantener historial de cambios</p></li>
+</ul>
+</section>
+<section id="rf-007-exportacion-de-facturas">
+<h4>RF-007: Exportación de Facturas<a class="headerlink" href="#rf-007-exportacion-de-facturas" title="Link to this heading">¶</a></h4>
+<p>Las facturas deben poder exportarse en:</p>
+<ul class="simple">
+<li><p>PDF con formato profesional</p></li>
+<li><p>XML para cumplimiento fiscal (CFDI, formato SAT)</p></li>
+<li><p>Excel para análisis de datos</p></li>
+<li><p>Envío automático por correo electrónico</p></li>
+</ul>
+</section>
+</section>
+<section id="gestion-de-pagos">
+<h3>3. Gestión de Pagos<a class="headerlink" href="#gestion-de-pagos" title="Link to this heading">¶</a></h3>
+<section id="rf-008-registro-de-pagos">
+<h4>RF-008: Registro de Pagos<a class="headerlink" href="#rf-008-registro-de-pagos" title="Link to this heading">¶</a></h4>
+<p>El sistema debe permitir registrar pagos con:</p>
+<ul class="simple">
+<li><p>Monto del pago</p></li>
+<li><p>Método de pago:</p>
+<ul>
+<li><p>Transferencia bancaria</p></li>
+<li><p>Tarjeta de crédito/débito</p></li>
+<li><p>PayPal</p></li>
+<li><p>Efectivo</p></li>
+<li><p>Cheque</p></li>
+</ul>
+</li>
+<li><p>Fecha del pago</p></li>
+<li><p>Referencia bancaria o número de transacción</p></li>
+<li><p>Factura(s) asociada(s)</p></li>
+<li><p>Aplicación automática de pagos a facturas pendientes</p></li>
+</ul>
+</section>
+<section id="rf-009-procesamiento-de-pagos-en-linea">
+<h4>RF-009: Procesamiento de Pagos en Línea<a class="headerlink" href="#rf-009-procesamiento-de-pagos-en-linea" title="Link to this heading">¶</a></h4>
+<p>El sistema debe integrar pasarelas de pago para:</p>
+<ul class="simple">
+<li><p>Procesar pagos con tarjeta en tiempo real</p></li>
+<li><p>Validar transacciones</p></li>
+<li><p>Generar comprobantes automáticos</p></li>
+<li><p>Manejar rechazos y reintentos</p></li>
+<li><p>Cumplir con estándares PCI-DSS</p></li>
+</ul>
+</section>
+<section id="rf-010-conciliacion-bancaria">
+<h4>RF-010: Conciliación Bancaria<a class="headerlink" href="#rf-010-conciliacion-bancaria" title="Link to this heading">¶</a></h4>
+<p>Funcionalidades de conciliación:</p>
+<ul class="simple">
+<li><p>Importar extractos bancarios (CSV, Excel)</p></li>
+<li><p>Comparar movimientos bancarios con pagos registrados</p></li>
+<li><p>Identificar discrepancias</p></li>
+<li><p>Generar reportes de conciliación</p></li>
+<li><p>Marcar pagos como conciliados</p></li>
+</ul>
+</section>
+</section>
+<section id="gestion-de-clientes">
+<h3>4. Gestión de Clientes<a class="headerlink" href="#gestion-de-clientes" title="Link to this heading">¶</a></h3>
+<section id="rf-011-registro-de-clientes">
+<h4>RF-011: Registro de Clientes<a class="headerlink" href="#rf-011-registro-de-clientes" title="Link to this heading">¶</a></h4>
+<p>El sistema debe mantener un catálogo de clientes con:</p>
+<ul class="simple">
+<li><p>Datos generales (nombre, dirección, teléfono, email)</p></li>
+<li><p>Datos fiscales (RFC/NIT, régimen fiscal)</p></li>
+<li><p>Límite de crédito</p></li>
+<li><p>Días de crédito</p></li>
+<li><p>Contactos adicionales</p></li>
+<li><p>Notas y observaciones</p></li>
+</ul>
+</section>
+<section id="rf-012-historial-del-cliente">
+<h4>RF-012: Historial del Cliente<a class="headerlink" href="#rf-012-historial-del-cliente" title="Link to this heading">¶</a></h4>
+<p>Para cada cliente se debe mostrar:</p>
+<ul class="simple">
+<li><p>Lista de facturas generadas</p></li>
+<li><p>Historial de pagos</p></li>
+<li><p>Saldo pendiente</p></li>
+<li><p>Estado de cuenta actual</p></li>
+<li><p>Antigüedad de saldos (30, 60, 90+ días)</p></li>
+</ul>
+</section>
+</section>
+<section id="reportes-y-analisis">
+<h3>5. Reportes y Análisis<a class="headerlink" href="#reportes-y-analisis" title="Link to this heading">¶</a></h3>
+<section id="rf-013-reportes-financieros">
+<h4>RF-013: Reportes Financieros<a class="headerlink" href="#rf-013-reportes-financieros" title="Link to this heading">¶</a></h4>
+<p>El sistema debe generar:</p>
+<p><strong>Reportes de Ventas:</strong></p>
+<ul class="simple">
+<li><p>Ventas por período (diario, semanal, mensual, anual)</p></li>
+<li><p>Ventas por producto/servicio</p></li>
+<li><p>Ventas por cliente</p></li>
+<li><p>Comparativas entre períodos</p></li>
+</ul>
+<p><strong>Reportes de Cobranza:</strong></p>
+<ul class="simple">
+<li><p>Cuentas por cobrar</p></li>
+<li><p>Antigüedad de saldos</p></li>
+<li><p>Proyección de flujo de efectivo</p></li>
+<li><p>Tasa de morosidad</p></li>
+</ul>
+<p><strong>Reportes Fiscales:</strong></p>
+<ul class="simple">
+<li><p>Declaraciones de IVA</p></li>
+<li><p>Resumen de ingresos</p></li>
+<li><p>Retenciones</p></li>
+</ul>
+</section>
+<section id="rf-014-dashboard-ejecutivo">
+<h4>RF-014: Dashboard Ejecutivo<a class="headerlink" href="#rf-014-dashboard-ejecutivo" title="Link to this heading">¶</a></h4>
+<p>Panel de control con métricas clave:</p>
+<ul class="simple">
+<li><p>Ingresos del mes actual vs mes anterior</p></li>
+<li><p>Total de facturas pendientes</p></li>
+<li><p>Total de facturas vencidas</p></li>
+<li><p>Gráficos de tendencias</p></li>
+<li><p>Top 10 clientes</p></li>
+<li><p>Indicadores de salud financiera</p></li>
+</ul>
+</section>
+<section id="rf-015-exportacion-de-reportes">
+<h4>RF-015: Exportación de Reportes<a class="headerlink" href="#rf-015-exportacion-de-reportes" title="Link to this heading">¶</a></h4>
+<p>Los reportes deben poder exportarse en:</p>
+<ul class="simple">
+<li><p>PDF</p></li>
+<li><p>Excel</p></li>
+<li><p>CSV</p></li>
+<li><p>Envío automático programado por correo</p></li>
+</ul>
+</section>
+</section>
+<section id="notificaciones">
+<h3>6. Notificaciones<a class="headerlink" href="#notificaciones" title="Link to this heading">¶</a></h3>
+<section id="rf-016-sistema-de-notificaciones">
+<h4>RF-016: Sistema de Notificaciones<a class="headerlink" href="#rf-016-sistema-de-notificaciones" title="Link to this heading">¶</a></h4>
+<p>El sistema debe enviar notificaciones por:</p>
+<p><strong>Correo electrónico:</strong></p>
+<ul class="simple">
+<li><p>Recordatorios de pago (antes del vencimiento)</p></li>
+<li><p>Avisos de factura vencida</p></li>
+<li><p>Confirmación de pago recibido</p></li>
+<li><p>Resúmenes semanales/mensuales</p></li>
+</ul>
+<p><strong>Notificaciones en el sistema:</strong></p>
+<ul class="simple">
+<li><p>Alertas de facturas próximas a vencer</p></li>
+<li><p>Notificaciones de pagos recibidos</p></li>
+<li><p>Recordatorios de tareas pendientes</p></li>
+</ul>
+</section>
+<section id="rf-017-configuracion-de-notificaciones">
+<h4>RF-017: Configuración de Notificaciones<a class="headerlink" href="#rf-017-configuracion-de-notificaciones" title="Link to this heading">¶</a></h4>
+<p>Los usuarios deben poder:</p>
+<ul class="simple">
+<li><p>Activar/desactivar tipos de notificaciones</p></li>
+<li><p>Configurar frecuencia de envío</p></li>
+<li><p>Personalizar plantillas de correo</p></li>
+<li><p>Establecer recordatorios automáticos</p></li>
+</ul>
+</section>
+</section>
+<section id="seguridad-y-auditoria">
+<h3>7. Seguridad y Auditoría<a class="headerlink" href="#seguridad-y-auditoria" title="Link to this heading">¶</a></h3>
+<section id="rf-018-registro-de-auditoria">
+<h4>RF-018: Registro de Auditoría<a class="headerlink" href="#rf-018-registro-de-auditoria" title="Link to this heading">¶</a></h4>
+<p>El sistema debe mantener un log de:</p>
+<ul class="simple">
+<li><p>Todas las acciones de usuarios (login, logout, modificaciones)</p></li>
+<li><p>Cambios en facturas y pagos</p></li>
+<li><p>Acceso a información sensible</p></li>
+<li><p>Timestamp y usuario responsable</p></li>
+<li><p>IP de origen</p></li>
+</ul>
+</section>
+<section id="rf-019-respaldo-de-datos">
+<h4>RF-019: Respaldo de Datos<a class="headerlink" href="#rf-019-respaldo-de-datos" title="Link to this heading">¶</a></h4>
+<p>El sistema debe:</p>
+<ul class="simple">
+<li><p>Realizar respaldos automáticos diarios</p></li>
+<li><p>Permitir respaldos manuales bajo demanda</p></li>
+<li><p>Mantener histórico de respaldos (mínimo 30 días)</p></li>
+<li><p>Facilitar restauración de datos</p></li>
+</ul>
+</section>
+</section>
+<section id="configuracion-del-sistema">
+<h3>8. Configuración del Sistema<a class="headerlink" href="#configuracion-del-sistema" title="Link to this heading">¶</a></h3>
+<section id="rf-020-parametros-generales">
+<h4>RF-020: Parámetros Generales<a class="headerlink" href="#rf-020-parametros-generales" title="Link to this heading">¶</a></h4>
+<p>Configuración de:</p>
+<ul class="simple">
+<li><p>Datos de la empresa (nombre, logo, RFC, dirección)</p></li>
+<li><p>Configuración fiscal (tasas de impuestos)</p></li>
+<li><p>Numeración de facturas (prefijo, longitud, inicio)</p></li>
+<li><p>Moneda predeterminada</p></li>
+<li><p>Formato de fecha y hora</p></li>
+<li><p>Idioma del sistema</p></li>
+</ul>
+</section>
+<section id="rf-021-plantillas-y-formatos">
+<h4>RF-021: Plantillas y Formatos<a class="headerlink" href="#rf-021-plantillas-y-formatos" title="Link to this heading">¶</a></h4>
+<p>Personalización de:</p>
+<ul class="simple">
+<li><p>Plantillas de facturas (HTML/PDF)</p></li>
+<li><p>Plantillas de correos electrónicos</p></li>
+<li><p>Formatos de reportes</p></li>
+<li><p>Logo y colores corporativos</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="requisitos-no-funcionales">
+<h2>Requisitos No Funcionales<a class="headerlink" href="#requisitos-no-funcionales" title="Link to this heading">¶</a></h2>
+<section id="rendimiento">
+<h3>Rendimiento<a class="headerlink" href="#rendimiento" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>El sistema debe responder en menos de 2 segundos para operaciones comunes</p></li>
+<li><p>Debe soportar al menos 1000 usuarios concurrentes</p></li>
+<li><p>Capacidad de procesar 10,000 facturas por mes</p></li>
+</ul>
+</section>
+<section id="seguridad">
+<h3>Seguridad<a class="headerlink" href="#seguridad" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Encriptación de datos sensibles (SSL/TLS)</p></li>
+<li><p>Cumplimiento con GDPR y normativas de privacidad</p></li>
+<li><p>Autenticación de dos factores (opcional)</p></li>
+<li><p>Políticas de contraseñas robustas</p></li>
+</ul>
+</section>
+<section id="disponibilidad">
+<h3>Disponibilidad<a class="headerlink" href="#disponibilidad" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Disponibilidad del 99.5% (downtime máximo de 3.65 días/año)</p></li>
+<li><p>Tiempo de respuesta ante incidentes: 4 horas</p></li>
+<li><p>Mantenimiento programado en horarios de baja actividad</p></li>
+</ul>
+</section>
+<section id="escalabilidad">
+<h3>Escalabilidad<a class="headerlink" href="#escalabilidad" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Arquitectura modular y microservicios</p></li>
+<li><p>Base de datos escalable horizontalmente</p></li>
+<li><p>Cacheo de consultas frecuentes</p></li>
+</ul>
+</section>
+</section>
+<section id="tecnologias-recomendadas">
+<h2>Tecnologías Recomendadas<a class="headerlink" href="#tecnologias-recomendadas" title="Link to this heading">¶</a></h2>
+<section id="backend">
+<h3>Backend<a class="headerlink" href="#backend" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Lenguaje:</strong> Python 3.13+</p></li>
+<li><p><strong>Framework:</strong> FastAPI o Django</p></li>
+<li><p><strong>Base de datos:</strong> PostgreSQL</p></li>
+<li><p><strong>Cache:</strong> Redis</p></li>
+<li><p><strong>Mensajería:</strong> RabbitMQ o Celery</p></li>
+</ul>
+</section>
+<section id="frontend">
+<h3>Frontend<a class="headerlink" href="#frontend" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Framework:</strong> React o Vue.js</p></li>
+<li><p><strong>UI Library:</strong> Material-UI o Ant Design</p></li>
+<li><p><strong>Gestión de estado:</strong> Redux o Pinia</p></li>
+</ul>
+</section>
+<section id="devops">
+<h3>DevOps<a class="headerlink" href="#devops" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Contenedores:</strong> Docker</p></li>
+<li><p><strong>Orquestación:</strong> Kubernetes</p></li>
+<li><p><strong>CI/CD:</strong> GitHub Actions o GitLab CI</p></li>
+<li><p><strong>Monitoreo:</strong> Prometheus + Grafana</p></li>
+</ul>
+</section>
+</section>
+<section id="glosario">
+<h2>Glosario<a class="headerlink" href="#glosario" title="Link to this heading">¶</a></h2>
+<dl class="simple glossary">
+<dt id="term-CFDI">CFDI<a class="headerlink" href="#term-CFDI" title="Link to this term">¶</a></dt><dd><p>Comprobante Fiscal Digital por Internet (México)</p>
+</dd>
+<dt id="term-IVA">IVA<a class="headerlink" href="#term-IVA" title="Link to this term">¶</a></dt><dd><p>Impuesto al Valor Agregado</p>
+</dd>
+<dt id="term-RFC">RFC<a class="headerlink" href="#term-RFC" title="Link to this term">¶</a></dt><dd><p>Registro Federal de Contribuyentes (México)</p>
+</dd>
+<dt id="term-NIT">NIT<a class="headerlink" href="#term-NIT" title="Link to this term">¶</a></dt><dd><p>Número de Identificación Tributaria</p>
+</dd>
+<dt id="term-PCI-DSS">PCI-DSS<a class="headerlink" href="#term-PCI-DSS" title="Link to this term">¶</a></dt><dd><p>Payment Card Industry Data Security Standard</p>
+</dd>
+<dt id="term-JWT">JWT<a class="headerlink" href="#term-JWT" title="Link to this term">¶</a></dt><dd><p>JSON Web Token</p>
+</dd>
+<dt id="term-API">API<a class="headerlink" href="#term-API" title="Link to this term">¶</a></dt><dd><p>Application Programming Interface</p>
+</dd>
+</dl>
+</section>
+<section id="contacto-y-soporte">
+<h2>Contacto y Soporte<a class="headerlink" href="#contacto-y-soporte" title="Link to this heading">¶</a></h2>
+<p>Para más información sobre BillCash:</p>
+<ul class="simple">
+<li><p><strong>Email:</strong> <a class="reference external" href="mailto:soporte&#37;&#52;&#48;billcash&#46;com">soporte<span>&#64;</span>billcash<span>&#46;</span>com</a></p></li>
+<li><p><strong>Teléfono:</strong> +57 318-428-6954</p></li>
+<li><p><strong>Sitio web:</strong> <a class="reference external" href="https://www.billcash.com">https://www.billcash.com</a></p></li>
+<li><p><strong>Documentación:</strong> <a class="reference external" href="https://docs.billcash.com">https://docs.billcash.com</a></p></li>
+</ul>
+</section>
+<section id="indice-de-contenidos">
+<h2>Índice de Contenidos<a class="headerlink" href="#indice-de-contenidos" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Documentación:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="casos_uso.html">Casos de Uso - BillCash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#diagrama-general-de-casos-de-uso">Diagrama General de Casos de Uso</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#especificacion-detallada-de-casos-de-uso">Especificación Detallada de Casos de Uso</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#cu-001-crear-cuenta">CU-001: Crear Cuenta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#cu-002-iniciar-sesion">CU-002: Iniciar Sesión</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#cu-003-enviar-dinero">CU-003: Enviar Dinero</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#cu-004-ver-transacciones">CU-004: Ver Transacciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#cu-005-cancelar-transaccion">CU-005: Cancelar Transacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#cu-006-gestionar-usuarios">CU-006: Gestionar Usuarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#relaciones-entre-casos-de-uso">Relaciones entre Casos de Uso</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#matriz-de-trazabilidad">Matriz de Trazabilidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#actores-del-sistema">Actores del Sistema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#resumen-de-casos-de-uso-por-actor">Resumen de Casos de Uso por Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#notas-de-implementacion">Notas de Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#diagrama-de-estados-transaccion">Diagrama de Estados - Transacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#glosario-de-terminos">Glosario de Términos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="casos_uso.html#referencias">Referencias</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manual_index.html">Manual de Usuario - BillCash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#bienvenido-al-manual-de-usuario">Bienvenido al Manual de Usuario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#contenido-del-manual">Contenido del Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#navegacion-rapida">Navegación Rápida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#informacion-adicional">Información Adicional</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;2025, joel medina, juan salinas, david torres.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
