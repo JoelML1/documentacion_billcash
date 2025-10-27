@@ -8,7 +8,6 @@ env/
 venv/
 .venv/
 ENV/
-build/
 develop-eggs/
 dist/
 downloads/
@@ -32,8 +31,7 @@ env/
 
 # Sphinx documentation
 docs/_build/
-docs/build/
-docs/.doctrees/
+# docs/build/ - Comentado para permitir que GitHub Actions lo use
 
 # IDE
 .vscode/

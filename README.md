@@ -2,8 +2,17 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![Status](https://img.shields.io/badge/status-en%20desarrollo-yellow.svg)
+![Documentation](https://img.shields.io/badge/docs-online-green.svg)
 
 Documentación completa del sistema **BillCash**, una plataforma integral de gestión de pagos y facturación.
+
+## 🌐 Ver Documentación Online
+
+La documentación está disponible en línea en:
+
+**📖 https://joelml1.github.io/documentacion_billcash/**
+
+Se actualiza automáticamente cada vez que se hace push al repositorio.
 
 ## 📋 Descripción
 
@@ -17,6 +26,33 @@ BillCash es un sistema diseñado para facilitar el control financiero, procesami
 - ✅ Administración de clientes y proveedores
 - ✅ Integración con múltiples métodos de pago
 - ✅ Automatización de procesos de cobro
+
+## 📖 Contenido de la Documentación
+
+### 🔧 Requisitos Funcionales
+- Gestión de Usuarios
+- Gestión de Facturas
+- Gestión de Pagos
+- Gestión de Clientes
+- Reportes y Análisis
+- Notificaciones
+- Seguridad y Auditoría
+- Configuración del Sistema
+
+### 📱 Manual de Usuario
+- Introducción y requisitos
+- Registro de usuario
+- Inicio de sesión
+- Dashboard principal
+- Enviar dinero
+- Solicitar dinero
+- Cartera de transacciones
+
+### 🎯 Casos de Uso
+- Diagramas detallados
+- Especificaciones técnicas
+- Matriz de trazabilidad
+- Actores del sistema
 
 ## 📖 Documentación
 
