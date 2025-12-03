@@ -1,0 +1,186 @@
+/* ==========================================
+   BillCash - Documentación CSS Moderna
+   Diseño inspirado en sitios modernos
+   ========================================== */
+
+/* Colores principales */
+:root {
+    --billcash-primary: #00ff00;
+    --billcash-secondary: #00cc00;
+    --billcash-dark: #0a0a0a;
+    --billcash-darker: #000000;
+    --billcash-light: #1a1a1a;
+    --billcash-white: #ffffff;
+    --billcash-gray: #808080;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--billcash-darker);
+    color: var(--billcash-white);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.document {
+    background-color: var(--billcash-dark);
+    margin: 0 0 0 280px;
+    padding: 40px 60px;
+    min-height: 100vh;
+}
+
+/* Encabezados modernos */
+h1 {
+    color: var(--billcash-white) !important;
+    font-weight: 800;
+    font-size: 2.5em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: var(--billcash-primary) !important;
+}
+
+h2 {
+    color: var(--billcash-white) !important;
+    font-weight: 700;
+    font-size: 1.8em;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    border-left: 4px solid var(--billcash-primary);
+    transition: all 0.3s ease;
+}
+
+h2:hover {
+    color: var(--billcash-primary) !important;
+    padding-left: 25px;
+}
+
+h3 {
+    color: var(--billcash-white) !important;
+    font-weight: 600;
+    font-size: 1.4em;
+    transition: color 0.3s ease;
+}
+
+h3:hover {
+    color: var(--billcash-primary) !important;
+}
+
+/* Párrafos */
+p {
+    color: var(--billcash-white);
+    font-size: 1.05em;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    transition: color 0.3s ease;
+}
+
+p:hover {
+    color: var(--billcash-primary);
+}
+
+/* Listas */
+ul, ol {
+    line-height: 1.8;
+    color: var(--billcash-white);
+}
+
+li {
+    margin: 12px 0;
+    color: var(--billcash-white);
+    transition: color 0.3s ease;
+}
+
+li:hover {
+    color: var(--billcash-primary);
+}
+
+/* Enlaces */
+a {
+    color: var(--billcash-white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    color: var(--billcash-primary);
+    border-bottom: 1px solid var(--billcash-primary);
+}
+
+/* Sidebar moderno */
+.sphinxsidebar {
+    background: var(--billcash-darker);
+    border-right: 1px solid rgba(0, 255, 0, 0.1);
+    padding: 30px 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.sphinxsidebar a {
+    color: var(--billcash-gray);
+    display: block;
+    padding: 10px 16px;
+    margin: 2px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sphinxsidebar a:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+    color: var(--billcash-primary);
+    transform: translateX(4px);
+    border: none;
+}
+
+/* Logo */
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+.logo a {
+    color: var(--billcash-primary);
+    font-size: 1.8em;
+    font-weight: 800;
+    padding: 0 !important;
+    transform: none !important;
+}
+
+.logo img {
+    max-width: 180px;
+    height: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .document {
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .sphinxsidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+}
