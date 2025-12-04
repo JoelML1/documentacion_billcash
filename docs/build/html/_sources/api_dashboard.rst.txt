@@ -21,6 +21,11 @@ Endpoints Disponibles
 - ``GET /`` - Root
 - ``GET /health`` - Health Check
 
+.. image:: _static/fastapi_4.jpg
+   :alt: Endpoints default
+   :align: center
+   :width: 100%
+
 **usuarios**
 
 - ``POST /usuarios/login-json`` - Login Json
@@ -41,7 +46,40 @@ Endpoints Disponibles
 - ``POST /usuarios/solicitar-recuperacion`` - Solicitar Recuperacion Contraseña
 - ``POST /usuarios/restablecer-contrasena`` - Restablecer Contraseña
 
+.. image:: _static/fastapi_5.jpg
+   :alt: Endpoints de usuarios
+   :align: center
+   :width: 100%
+
 🔒 = Requiere Autenticación
+
+**transacciones**
+
+.. image:: _static/fastapi_6.jpg
+   :alt: Endpoints de transacciones
+   :align: center
+   :width: 100%
+
+**solicitudes**
+
+.. image:: _static/fastapi_7.jpg
+   :alt: Endpoints de solicitudes
+   :align: center
+   :width: 100%
+
+**notificaciones**
+
+.. image:: _static/fastapi_8.jpg
+   :alt: Endpoints de notificaciones
+   :align: center
+   :width: 100%
+
+**categorias**
+
+.. image:: _static/fastapi_9.jpg
+   :alt: Endpoints de categorías
+   :align: center
+   :width: 100%
 
 Autenticación
 -------------
@@ -129,6 +167,11 @@ UserProfileComplete
 
 Esquema completo del perfil de usuario.
 
+.. image:: _static/fastapi_10.jpg
+   :alt: Schema UserProfileComplete
+   :align: center
+   :width: 80%
+
 .. list-table::
    :widths: 30 20 50
    :header-rows: 1
@@ -161,11 +204,48 @@ Esquema completo del perfil de usuario.
      - number
      - Saldo actual en la cuenta
 
+Schemas de Transacciones
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: _static/fastapi_11.jpg
+   :alt: Schemas de transacciones
+   :align: center
+   :width: 80%
+
+Schemas de Solicitudes
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: _static/fastapi_12.jpg
+   :alt: Schemas de solicitudes
+   :align: center
+   :width: 80%
+
+Schemas de Notificaciones
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: _static/fastapi_13.jpg
+   :alt: Schemas de notificaciones
+   :align: center
+   :width: 80%
+
+Schemas de Categorías
+~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: _static/fastapi_14.jpg
+   :alt: Schemas de categorías
+   :align: center
+   :width: 80%
+
 Ejemplo de Implementación
 --------------------------
 
 Registro de Usuario
 ~~~~~~~~~~~~~~~~~~~
+
+.. image:: _static/fastapi_15.jpg
+   :alt: Endpoint de registro
+   :align: center
+   :width: 100%
 
 .. code-block:: bash
 
@@ -184,6 +264,11 @@ Registro de Usuario
 Login
 ~~~~~
 
+.. image:: _static/fastapi_16.jpg
+   :alt: Endpoint de login
+   :align: center
+   :width: 100%
+
 .. code-block:: bash
 
    curl -X POST "http://localhost:8000/usuarios/login-json" \
@@ -196,6 +281,11 @@ Login
 Obtener Mi Perfil
 ~~~~~~~~~~~~~~~~~
 
+.. image:: _static/fastapi_17.jpg
+   :alt: Endpoint obtener mi perfil
+   :align: center
+   :width: 100%
+
 .. code-block:: bash
 
    curl -X GET "http://localhost:8000/usuarios/me" \
@@ -203,6 +293,11 @@ Obtener Mi Perfil
 
 Actualizar Usuario
 ~~~~~~~~~~~~~~~~~~
+
+.. image:: _static/fastapi_18.jpg
+   :alt: Endpoint actualizar usuario
+   :align: center
+   :width: 100%
 
 .. code-block:: bash
 
@@ -215,8 +310,45 @@ Actualizar Usuario
        "telefono": "3009876543"
      }'
 
+Crear Transacción
+~~~~~~~~~~~~~~~~~
+
+.. image:: _static/fastapi_19.jpg
+   :alt: Endpoint crear transacción
+   :align: center
+   :width: 100%
+
+Crear Solicitud
+~~~~~~~~~~~~~~~
+
+.. image:: _static/fastapi_20.jpg
+   :alt: Endpoint crear solicitud
+   :align: center
+   :width: 100%
+
+Listar Notificaciones
+~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: _static/fastapi_21.jpg
+   :alt: Endpoint listar notificaciones
+   :align: center
+   :width: 100%
+
+Gestión de Categorías
+~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: _static/fastapi_22.jpg
+   :alt: Endpoint gestión de categorías
+   :align: center
+   :width: 100%
+
 JavaScript (Fetch API)
 ~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: _static/fastapi_23.jpg
+   :alt: Ejemplos de implementación JavaScript
+   :align: center
+   :width: 100%
 
 .. code-block:: javascript
 
@@ -255,6 +387,11 @@ JavaScript (Fetch API)
 
 Python (Requests)
 ~~~~~~~~~~~~~~~~~
+
+.. image:: _static/fastapi_24.jpg
+   :alt: Ejemplos de implementación Python
+   :align: center
+   :width: 100%
 
 .. code-block:: python
 
@@ -341,6 +478,11 @@ Documentación Interactiva
 --------------------------
 
 FastAPI proporciona documentación interactiva automática:
+
+.. image:: _static/fastapi_25.jpg
+   :alt: Documentación interactiva de FastAPI
+   :align: center
+   :width: 100%
 
 - **Swagger UI**: http://localhost:8000/docs
 - **ReDoc**: http://localhost:8000/redoc
