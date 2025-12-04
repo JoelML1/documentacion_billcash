@@ -8,6 +8,8 @@ El Dashboard proporciona una vista general del estado de la cuenta del usuario, 
    :align: center
    :width: 100%
 
+*Imagen 1: Interfaz principal de la API de BillCash mostrando la documentación interactiva generada automáticamente por FastAPI. Esta vista presenta todos los endpoints disponibles organizados por categorías.*
+
 Vista General de la API
 -----------------------
 
@@ -25,6 +27,8 @@ Endpoints Disponibles
    :alt: Endpoints default
    :align: center
    :width: 100%
+
+*Imagen 4: Endpoints básicos de la API. El endpoint Root (/) devuelve información general del servicio, mientras que Health Check (/health) verifica el estado de la aplicación y la conexión a la base de datos.*
 
 **usuarios**
 
@@ -51,6 +55,8 @@ Endpoints Disponibles
    :align: center
    :width: 100%
 
+*Imagen 5: Conjunto completo de endpoints para la gestión de usuarios. Incluye operaciones de autenticación (login, registro), consulta de perfiles, actualización de datos, eliminación de cuentas y recuperación de contraseñas. Los endpoints marcados con candado requieren autenticación JWT.*
+
 🔒 = Requiere Autenticación
 
 **transacciones**
@@ -60,12 +66,16 @@ Endpoints Disponibles
    :align: center
    :width: 100%
 
+*Imagen 6: Endpoints para la gestión de transacciones financieras. Permite crear, consultar, listar y eliminar transacciones entre usuarios de la wallet digital. Incluye filtros por usuario, fecha y tipo de transacción.*
+
 **solicitudes**
 
 .. image:: _static/fastapi_7.jpg
    :alt: Endpoints de solicitudes
    :align: center
    :width: 100%
+
+*Imagen 7: Endpoints para el manejo de solicitudes de dinero entre usuarios. Los usuarios pueden crear solicitudes de pago, aceptarlas, rechazarlas o cancelarlas. Incluye consultas por estado (pendiente, aceptada, rechazada).*
 
 **notificaciones**
 
@@ -74,12 +84,16 @@ Endpoints Disponibles
    :align: center
    :width: 100%
 
+*Imagen 8: Sistema de notificaciones en tiempo real. Permite listar, marcar como leídas y eliminar notificaciones del usuario. Las notificaciones se generan automáticamente ante eventos como transacciones recibidas, solicitudes de dinero o cambios en el estado de la cuenta.*
+
 **categorias**
 
 .. image:: _static/fastapi_9.jpg
    :alt: Endpoints de categorías
    :align: center
    :width: 100%
+
+*Imagen 9: Gestión de categorías para clasificar transacciones. Los usuarios pueden crear categorías personalizadas (Alimentación, Transporte, Entretenimiento, etc.) para organizar mejor sus gastos e ingresos.*
 
 Autenticación
 -------------
@@ -99,6 +113,8 @@ Endpoint para obtener el perfil completo del usuario autenticado.
    :alt: Endpoint Actualizar Usuario
    :align: center
    :width: 100%
+
+*Imagen 2: Detalle del endpoint PUT /usuarios/{usuario_id} en Swagger UI. Muestra los parámetros requeridos, el esquema del request body y las posibles respuestas. Permite actualizar información personal del usuario como nombres, apellidos, edad, dirección y documento de identidad.*
 
 **Endpoint:**
 
@@ -146,6 +162,8 @@ Endpoint para obtener el perfil completo del usuario autenticado.
    :align: center
    :width: 80%
 
+*Imagen 3: Esquema del modelo UserProfileComplete que define la estructura de datos devuelta al consultar el perfil completo de un usuario. Incluye todos los campos con sus tipos de datos y validaciones correspondientes.*
+
 .. code-block:: json
 
    {
@@ -171,6 +189,8 @@ Esquema completo del perfil de usuario.
    :alt: Schema UserProfileComplete
    :align: center
    :width: 80%
+
+*Imagen 10: Visualización completa del schema UserProfileComplete en Swagger. Muestra la estructura JSON con todos los campos del perfil de usuario, incluyendo tipos de datos, restricciones y valores de ejemplo para cada propiedad.*
 
 .. list-table::
    :widths: 30 20 50
@@ -212,6 +232,8 @@ Schemas de Transacciones
    :align: center
    :width: 80%
 
+*Imagen 11: Modelos de datos para transacciones. Define la estructura de TransaccionCreate (para crear nuevas transacciones), TransaccionResponse (respuesta del servidor) y TransaccionFilter (para búsquedas y filtros). Incluye campos como monto, tipo de transacción, usuario origen/destino y categoría.*
+
 Schemas de Solicitudes
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -219,6 +241,8 @@ Schemas de Solicitudes
    :alt: Schemas de solicitudes
    :align: center
    :width: 80%
+
+*Imagen 12: Estructuras de datos para el sistema de solicitudes de dinero. Incluye SolicitudCreate, SolicitudResponse y SolicitudUpdate con campos para monto solicitado, usuario solicitante/destinatario, estado (pendiente/aceptada/rechazada) y descripción opcional.*
 
 Schemas de Notificaciones
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -228,6 +252,8 @@ Schemas de Notificaciones
    :align: center
    :width: 80%
 
+*Imagen 13: Modelos para el sistema de notificaciones. Define NotificacionCreate y NotificacionResponse con campos como título, mensaje, tipo de notificación, estado de lectura y fecha de creación. Permite mantener informados a los usuarios sobre eventos importantes.*
+
 Schemas de Categorías
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -235,6 +261,8 @@ Schemas de Categorías
    :alt: Schemas de categorías
    :align: center
    :width: 80%
+
+*Imagen 14: Estructura de datos para categorías de transacciones. CategoriaCreate y CategoriaResponse incluyen nombre, descripción, icono y color para personalizar la clasificación de gastos e ingresos del usuario.*
 
 Ejemplo de Implementación
 --------------------------
@@ -246,6 +274,8 @@ Registro de Usuario
    :alt: Endpoint de registro
    :align: center
    :width: 100%
+
+*Imagen 15: Endpoint POST /usuarios/registro en acción. Muestra la interfaz de Swagger para crear nuevos usuarios con validación de campos obligatorios (nombres, apellidos, correo, documento) y opcionales (teléfono). La contraseña se encripta automáticamente antes de guardarse en la base de datos.*
 
 .. code-block:: bash
 
@@ -269,6 +299,8 @@ Login
    :align: center
    :width: 100%
 
+*Imagen 16: Endpoint POST /usuarios/login-json para autenticación. Valida credenciales (correo y contraseña) y retorna un token JWT de acceso que debe incluirse en las peticiones subsecuentes a endpoints protegidos. El token tiene una expiración configurable.*
+
 .. code-block:: bash
 
    curl -X POST "http://localhost:8000/usuarios/login-json" \
@@ -286,6 +318,8 @@ Obtener Mi Perfil
    :align: center
    :width: 100%
 
+*Imagen 17: Endpoint GET /usuarios/me que retorna la información del usuario autenticado. Requiere token JWT en el header Authorization. Devuelve datos básicos del perfil sin información sensible como la contraseña.*
+
 .. code-block:: bash
 
    curl -X GET "http://localhost:8000/usuarios/me" \
@@ -298,6 +332,8 @@ Actualizar Usuario
    :alt: Endpoint actualizar usuario
    :align: center
    :width: 100%
+
+*Imagen 18: Endpoint PUT /usuarios/{usuario_id} para modificar datos del perfil. Solo el usuario propietario o administradores pueden actualizar la información. Acepta actualizaciones parciales (no es necesario enviar todos los campos).*
 
 .. code-block:: bash
 
@@ -318,6 +354,8 @@ Crear Transacción
    :align: center
    :width: 100%
 
+*Imagen 19: Endpoint para realizar transferencias de dinero entre usuarios. Valida saldo suficiente, actualiza los saldos de ambos usuarios automáticamente y registra la transacción con todos sus detalles (fecha, hora, monto, tipo, categoría). Genera notificaciones para ambas partes.*
+
 Crear Solicitud
 ~~~~~~~~~~~~~~~
 
@@ -325,6 +363,8 @@ Crear Solicitud
    :alt: Endpoint crear solicitud
    :align: center
    :width: 100%
+
+*Imagen 20: Endpoint para solicitar dinero a otros usuarios. El destinatario recibirá una notificación y podrá aceptar o rechazar la solicitud. Si se acepta, se genera automáticamente una transacción. Incluye monto solicitado, descripción opcional y estado de la solicitud.*
 
 Listar Notificaciones
 ~~~~~~~~~~~~~~~~~~~~~
@@ -334,6 +374,8 @@ Listar Notificaciones
    :align: center
    :width: 100%
 
+*Imagen 21: Endpoint GET para obtener todas las notificaciones del usuario autenticado. Permite filtrar por leídas/no leídas y ordenar por fecha. Incluye paginación para manejar grandes volúmenes de notificaciones eficientemente.*
+
 Gestión de Categorías
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -342,6 +384,8 @@ Gestión de Categorías
    :align: center
    :width: 100%
 
+*Imagen 22: Endpoints CRUD completos para categorías de transacciones. Los usuarios pueden crear categorías personalizadas, modificarlas, eliminarlas y listarlas. Cada categoría puede tener nombre, descripción, icono y color para mejor visualización en dashboards y reportes.*
+
 JavaScript (Fetch API)
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -349,6 +393,8 @@ JavaScript (Fetch API)
    :alt: Ejemplos de implementación JavaScript
    :align: center
    :width: 100%
+
+*Imagen 23: Ejemplos de código JavaScript para integrar la API en aplicaciones web. Muestra cómo hacer peticiones con Fetch API, manejar autenticación con tokens, procesar respuestas JSON y gestionar errores de forma efectiva.*
 
 .. code-block:: javascript
 
@@ -392,6 +438,8 @@ Python (Requests)
    :alt: Ejemplos de implementación Python
    :align: center
    :width: 100%
+
+*Imagen 24: Ejemplos de integración en Python usando la biblioteca requests. Demuestra cómo consumir los endpoints de la API, manejar autenticación JWT, serializar/deserializar JSON y capturar excepciones para un manejo robusto de errores.*
 
 .. code-block:: python
 
@@ -483,6 +531,8 @@ FastAPI proporciona documentación interactiva automática:
    :alt: Documentación interactiva de FastAPI
    :align: center
    :width: 100%
+
+*Imagen 25: Interfaz completa de Swagger UI generada automáticamente por FastAPI. Permite explorar todos los endpoints, ver esquemas de datos, probar peticiones directamente desde el navegador con autenticación incluida, y descargar la especificación OpenAPI. Ideal para desarrollo, testing y comprensión rápida de la API.*
 
 - **Swagger UI**: http://localhost:8000/docs
 - **ReDoc**: http://localhost:8000/redoc

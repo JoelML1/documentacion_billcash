@@ -114,6 +114,7 @@
 <p>El Dashboard proporciona una vista general del estado de la cuenta del usuario, incluyendo el saldo actual y el resumen de transacciones recientes.</p>
 <a class="reference internal image-reference" href="_images/fastapi_1.jpg"><img alt="BillCash Digital Wallet API" class="align-center" src="_images/fastapi_1.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 1: Interfaz principal de la API de BillCash mostrando la documentación interactiva generada automáticamente por FastAPI. Esta vista presenta todos los endpoints disponibles organizados por categorías.</em></p>
 <section id="vista-general-de-la-api">
 <h2>Vista General de la API<a class="headerlink" href="#vista-general-de-la-api" title="Link to this heading">¶</a></h2>
 <p>BillCash Digital Wallet API v1.0.0 (OAS 3.1) - API para wallet digital BillCash con FastAPI y MySQL.</p>
@@ -127,6 +128,7 @@
 </ul>
 <a class="reference internal image-reference" href="_images/fastapi_4.jpg"><img alt="Endpoints default" class="align-center" src="_images/fastapi_4.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 4: Endpoints básicos de la API. El endpoint Root (/) devuelve información general del servicio, mientras que Health Check (/health) verifica el estado de la aplicación y la conexión a la base de datos.</em></p>
 <p><strong>usuarios</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/usuarios/login-json</span></code> - Login Json</p></li>
@@ -149,19 +151,24 @@
 </ul>
 <a class="reference internal image-reference" href="_images/fastapi_5.jpg"><img alt="Endpoints de usuarios" class="align-center" src="_images/fastapi_5.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 5: Conjunto completo de endpoints para la gestión de usuarios. Incluye operaciones de autenticación (login, registro), consulta de perfiles, actualización de datos, eliminación de cuentas y recuperación de contraseñas. Los endpoints marcados con candado requieren autenticación JWT.</em></p>
 <p>🔒 = Requiere Autenticación</p>
 <p><strong>transacciones</strong></p>
 <a class="reference internal image-reference" href="_images/fastapi_6.jpg"><img alt="Endpoints de transacciones" class="align-center" src="_images/fastapi_6.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 6: Endpoints para la gestión de transacciones financieras. Permite crear, consultar, listar y eliminar transacciones entre usuarios de la wallet digital. Incluye filtros por usuario, fecha y tipo de transacción.</em></p>
 <p><strong>solicitudes</strong></p>
 <a class="reference internal image-reference" href="_images/fastapi_7.jpg"><img alt="Endpoints de solicitudes" class="align-center" src="_images/fastapi_7.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 7: Endpoints para el manejo de solicitudes de dinero entre usuarios. Los usuarios pueden crear solicitudes de pago, aceptarlas, rechazarlas o cancelarlas. Incluye consultas por estado (pendiente, aceptada, rechazada).</em></p>
 <p><strong>notificaciones</strong></p>
 <a class="reference internal image-reference" href="_images/fastapi_8.jpg"><img alt="Endpoints de notificaciones" class="align-center" src="_images/fastapi_8.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 8: Sistema de notificaciones en tiempo real. Permite listar, marcar como leídas y eliminar notificaciones del usuario. Las notificaciones se generan automáticamente ante eventos como transacciones recibidas, solicitudes de dinero o cambios en el estado de la cuenta.</em></p>
 <p><strong>categorias</strong></p>
 <a class="reference internal image-reference" href="_images/fastapi_9.jpg"><img alt="Endpoints de categorías" class="align-center" src="_images/fastapi_9.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 9: Gestión de categorías para clasificar transacciones. Los usuarios pueden crear categorías personalizadas (Alimentación, Transporte, Entretenimiento, etc.) para organizar mejor sus gastos e ingresos.</em></p>
 </section>
 <section id="autenticacion">
 <h2>Autenticación<a class="headerlink" href="#autenticacion" title="Link to this heading">¶</a></h2>
@@ -175,6 +182,7 @@
 <p>Endpoint para obtener el perfil completo del usuario autenticado.</p>
 <a class="reference internal image-reference" href="_images/fastapi_2.jpg"><img alt="Endpoint Actualizar Usuario" class="align-center" src="_images/fastapi_2.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 2: Detalle del endpoint PUT /usuarios/{usuario_id} en Swagger UI. Muestra los parámetros requeridos, el esquema del request body y las posibles respuestas. Permite actualizar información personal del usuario como nombres, apellidos, edad, dirección y documento de identidad.</em></p>
 <p><strong>Endpoint:</strong></p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">PUT /usuarios/{usuario_id}</span>
 </pre></div>
@@ -220,6 +228,7 @@
 <p><strong>Ejemplo de Respuesta Exitosa:</strong></p>
 <a class="reference internal image-reference" href="_images/fastapi_3.jpg"><img alt="Esquema de respuesta UserProfileComplete" class="align-center" src="_images/fastapi_3.jpg" style="width: 80%;" />
 </a>
+<p><em>Imagen 3: Esquema del modelo UserProfileComplete que define la estructura de datos devuelta al consultar el perfil completo de un usuario. Incluye todos los campos con sus tipos de datos y validaciones correspondientes.</em></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;id_usuario&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;nombres&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
@@ -240,6 +249,7 @@
 <p>Esquema completo del perfil de usuario.</p>
 <a class="reference internal image-reference" href="_images/fastapi_10.jpg"><img alt="Schema UserProfileComplete" class="align-center" src="_images/fastapi_10.jpg" style="width: 80%;" />
 </a>
+<p><em>Imagen 10: Visualización completa del schema UserProfileComplete en Swagger. Muestra la estructura JSON con todos los campos del perfil de usuario, incluyendo tipos de datos, restricciones y valores de ejemplo para cada propiedad.</em></p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 30.0%" />
@@ -292,21 +302,25 @@
 <h3>Schemas de Transacciones<a class="headerlink" href="#schemas-de-transacciones" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_11.jpg"><img alt="Schemas de transacciones" class="align-center" src="_images/fastapi_11.jpg" style="width: 80%;" />
 </a>
+<p><em>Imagen 11: Modelos de datos para transacciones. Define la estructura de TransaccionCreate (para crear nuevas transacciones), TransaccionResponse (respuesta del servidor) y TransaccionFilter (para búsquedas y filtros). Incluye campos como monto, tipo de transacción, usuario origen/destino y categoría.</em></p>
 </section>
 <section id="schemas-de-solicitudes">
 <h3>Schemas de Solicitudes<a class="headerlink" href="#schemas-de-solicitudes" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_12.jpg"><img alt="Schemas de solicitudes" class="align-center" src="_images/fastapi_12.jpg" style="width: 80%;" />
 </a>
+<p><em>Imagen 12: Estructuras de datos para el sistema de solicitudes de dinero. Incluye SolicitudCreate, SolicitudResponse y SolicitudUpdate con campos para monto solicitado, usuario solicitante/destinatario, estado (pendiente/aceptada/rechazada) y descripción opcional.</em></p>
 </section>
 <section id="schemas-de-notificaciones">
 <h3>Schemas de Notificaciones<a class="headerlink" href="#schemas-de-notificaciones" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_13.jpg"><img alt="Schemas de notificaciones" class="align-center" src="_images/fastapi_13.jpg" style="width: 80%;" />
 </a>
+<p><em>Imagen 13: Modelos para el sistema de notificaciones. Define NotificacionCreate y NotificacionResponse con campos como título, mensaje, tipo de notificación, estado de lectura y fecha de creación. Permite mantener informados a los usuarios sobre eventos importantes.</em></p>
 </section>
 <section id="schemas-de-categorias">
 <h3>Schemas de Categorías<a class="headerlink" href="#schemas-de-categorias" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_14.jpg"><img alt="Schemas de categorías" class="align-center" src="_images/fastapi_14.jpg" style="width: 80%;" />
 </a>
+<p><em>Imagen 14: Estructura de datos para categorías de transacciones. CategoriaCreate y CategoriaResponse incluyen nombre, descripción, icono y color para personalizar la clasificación de gastos e ingresos del usuario.</em></p>
 </section>
 </section>
 <section id="ejemplo-de-implementacion">
@@ -315,6 +329,7 @@
 <h3>Registro de Usuario<a class="headerlink" href="#registro-de-usuario" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_15.jpg"><img alt="Endpoint de registro" class="align-center" src="_images/fastapi_15.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 15: Endpoint POST /usuarios/registro en acción. Muestra la interfaz de Swagger para crear nuevos usuarios con validación de campos obligatorios (nombres, apellidos, correo, documento) y opcionales (teléfono). La contraseña se encripta automáticamente antes de guardarse en la base de datos.</em></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/usuarios/registro&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
@@ -333,6 +348,7 @@
 <h3>Login<a class="headerlink" href="#login" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_16.jpg"><img alt="Endpoint de login" class="align-center" src="_images/fastapi_16.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 16: Endpoint POST /usuarios/login-json para autenticación. Valida credenciales (correo y contraseña) y retorna un token JWT de acceso que debe incluirse en las peticiones subsecuentes a endpoints protegidos. El token tiene una expiración configurable.</em></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/usuarios/login-json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
@@ -346,6 +362,7 @@
 <h3>Obtener Mi Perfil<a class="headerlink" href="#obtener-mi-perfil" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_17.jpg"><img alt="Endpoint obtener mi perfil" class="align-center" src="_images/fastapi_17.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 17: Endpoint GET /usuarios/me que retorna la información del usuario autenticado. Requiere token JWT en el header Authorization. Devuelve datos básicos del perfil sin información sensible como la contraseña.</em></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/usuarios/me&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
 </pre></div>
@@ -355,6 +372,7 @@
 <h3>Actualizar Usuario<a class="headerlink" href="#actualizar-usuario" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_18.jpg"><img alt="Endpoint actualizar usuario" class="align-center" src="_images/fastapi_18.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 18: Endpoint PUT /usuarios/{usuario_id} para modificar datos del perfil. Solo el usuario propietario o administradores pueden actualizar la información. Acepta actualizaciones parciales (no es necesario enviar todos los campos).</em></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">&quot;http://localhost:8000/usuarios/1&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -370,26 +388,31 @@
 <h3>Crear Transacción<a class="headerlink" href="#crear-transaccion" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_19.jpg"><img alt="Endpoint crear transacción" class="align-center" src="_images/fastapi_19.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 19: Endpoint para realizar transferencias de dinero entre usuarios. Valida saldo suficiente, actualiza los saldos de ambos usuarios automáticamente y registra la transacción con todos sus detalles (fecha, hora, monto, tipo, categoría). Genera notificaciones para ambas partes.</em></p>
 </section>
 <section id="crear-solicitud">
 <h3>Crear Solicitud<a class="headerlink" href="#crear-solicitud" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_20.jpg"><img alt="Endpoint crear solicitud" class="align-center" src="_images/fastapi_20.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 20: Endpoint para solicitar dinero a otros usuarios. El destinatario recibirá una notificación y podrá aceptar o rechazar la solicitud. Si se acepta, se genera automáticamente una transacción. Incluye monto solicitado, descripción opcional y estado de la solicitud.</em></p>
 </section>
 <section id="listar-notificaciones">
 <h3>Listar Notificaciones<a class="headerlink" href="#listar-notificaciones" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_21.jpg"><img alt="Endpoint listar notificaciones" class="align-center" src="_images/fastapi_21.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 21: Endpoint GET para obtener todas las notificaciones del usuario autenticado. Permite filtrar por leídas/no leídas y ordenar por fecha. Incluye paginación para manejar grandes volúmenes de notificaciones eficientemente.</em></p>
 </section>
 <section id="gestion-de-categorias">
 <h3>Gestión de Categorías<a class="headerlink" href="#gestion-de-categorias" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_22.jpg"><img alt="Endpoint gestión de categorías" class="align-center" src="_images/fastapi_22.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 22: Endpoints CRUD completos para categorías de transacciones. Los usuarios pueden crear categorías personalizadas, modificarlas, eliminarlas y listarlas. Cada categoría puede tener nombre, descripción, icono y color para mejor visualización en dashboards y reportes.</em></p>
 </section>
 <section id="javascript-fetch-api">
 <h3>JavaScript (Fetch API)<a class="headerlink" href="#javascript-fetch-api" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_23.jpg"><img alt="Ejemplos de implementación JavaScript" class="align-center" src="_images/fastapi_23.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 23: Ejemplos de código JavaScript para integrar la API en aplicaciones web. Muestra cómo hacer peticiones con Fetch API, manejar autenticación con tokens, procesar respuestas JSON y gestionar errores de forma efectiva.</em></p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Login</span>
 <span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">login</span><span class="p">(</span><span class="nx">correo</span><span class="p">,</span><span class="w"> </span><span class="nx">contraseña</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;http://localhost:8000/usuarios/login-json&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
@@ -429,6 +452,7 @@
 <h3>Python (Requests)<a class="headerlink" href="#python-requests" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_24.jpg"><img alt="Ejemplos de implementación Python" class="align-center" src="_images/fastapi_24.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 24: Ejemplos de integración en Python usando la biblioteca requests. Demuestra cómo consumir los endpoints de la API, manejar autenticación JWT, serializar/deserializar JSON y capturar excepciones para un manejo robusto de errores.</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="c1"># Login</span>
@@ -533,6 +557,7 @@
 <p>FastAPI proporciona documentación interactiva automática:</p>
 <a class="reference internal image-reference" href="_images/fastapi_25.jpg"><img alt="Documentación interactiva de FastAPI" class="align-center" src="_images/fastapi_25.jpg" style="width: 100%;" />
 </a>
+<p><em>Imagen 25: Interfaz completa de Swagger UI generada automáticamente por FastAPI. Permite explorar todos los endpoints, ver esquemas de datos, probar peticiones directamente desde el navegador con autenticación incluida, y descargar la especificación OpenAPI. Ideal para desarrollo, testing y comprensión rápida de la API.</em></p>
 <ul class="simple">
 <li><p><strong>Swagger UI</strong>: <a class="reference external" href="http://localhost:8000/docs">http://localhost:8000/docs</a></p></li>
 <li><p><strong>ReDoc</strong>: <a class="reference external" href="http://localhost:8000/redoc">http://localhost:8000/redoc</a></p></li>
