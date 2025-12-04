@@ -3,183 +3,347 @@ Dashboard - API REST
 
 El Dashboard proporciona una vista general del estado de la cuenta del usuario, incluyendo el saldo actual y el resumen de transacciones recientes.
 
-Endpoints del Dashboard
+.. image:: _static/fastapi_1.png
+   :alt: BillCash Digital Wallet API
+   :align: center
+   :width: 100%
+
+Vista General de la API
 -----------------------
 
-Obtener Información del Dashboard
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BillCash Digital Wallet API v1.0.0 (OAS 3.1) - API para wallet digital BillCash con FastAPI y MySQL.
 
-Devuelve el saldo actual del usuario y sus transacciones recientes.
+Endpoints Disponibles
+---------------------
+
+**default**
+
+- ``GET /`` - Root
+- ``GET /health`` - Health Check
+
+**usuarios**
+
+- ``POST /usuarios/login-json`` - Login Json
+- ``POST /usuarios/registro`` - Registrar Usuario
+- ``GET /usuarios/`` - Listar Usuarios 🔒
+- ``GET /usuarios/me`` - Get My Profile 🔒
+- ``GET /usuarios/me/complete`` - Get My Complete Profile 🔒
+- ``GET /usuarios/buscar`` - Buscar Usuarios Publicos
+- ``GET /usuarios/{usuario_id}`` - Obtener Usuario
+- ``PUT /usuarios/{usuario_id}`` - Actualizar Usuario 🔒
+- ``DELETE /usuarios/{usuario_id}`` - Eliminar Usuario 🔒
+- ``GET /usuarios/test-endpoint`` - Test Endpoint 🔒
+- ``DELETE /usuarios/eliminar-mi-cuenta`` - Eliminar Mi Cuenta 🔒
+- ``DELETE /usuarios/account/delete`` - Eliminar Cuenta Completa Nueva Ruta 🔒
+- ``DELETE /usuarios/eliminar-cuenta-completa`` - Eliminar Cuenta Completa 🔒
+- ``GET /usuarios/verificar-email/{token}`` - Verificar Email
+- ``POST /usuarios/reenviar-verificacion`` - Reenviar Verificacion
+- ``POST /usuarios/solicitar-recuperacion`` - Solicitar Recuperacion Contraseña
+- ``POST /usuarios/restablecer-contrasena`` - Restablecer Contraseña
+
+🔒 = Requiere Autenticación
+
+Autenticación
+-------------
+
+La API utiliza autenticación Bearer Token (JWT). Para acceder a los endpoints protegidos, debes incluir el token en el header:
+
+.. code-block:: http
+
+   Authorization: Bearer {tu_token_jwt}
+
+Obtener Perfil de Usuario
+--------------------------
+
+Endpoint para obtener el perfil completo del usuario autenticado.
+
+.. image:: _static/fastapi_2.png
+   :alt: Endpoint Actualizar Usuario
+   :align: center
+   :width: 100%
 
 **Endpoint:**
 
 .. code-block:: http
 
-   GET /api/dashboard
+   PUT /usuarios/{usuario_id}
 
-**Headers:**
+**Parámetros de Ruta:**
 
-.. code-block:: http
+.. list-table::
+   :widths: 20 20 60
+   :header-rows: 1
 
-   Authorization: Bearer {token}
-   Content-Type: application/json
+   * - Parámetro
+     - Tipo
+     - Descripción
+   * - usuario_id
+     - integer
+     - ID del usuario a actualizar (requerido)
 
-**Respuesta Exitosa (200 OK):**
+**Request Body (application/json):**
 
 .. code-block:: json
 
    {
-     "saldo": 5000.00,
-     "transaccionesRecientes": [
-       {
-         "id": 1,
-         "tipo": "ENVIO",
-         "monto": 500.00,
-         "destinatario": "usuario@example.com",
-         "fecha": "2025-12-03T10:30:00",
-         "estado": "COMPLETADA"
-       },
-       {
-         "id": 2,
-         "tipo": "RECEPCION",
-         "monto": 1000.00,
-         "remitente": "otro@example.com",
-         "fecha": "2025-12-02T15:45:00",
-         "estado": "COMPLETADA"
-       }
-     ],
-     "estadisticas": {
-       "totalEnviado": 2500.00,
-       "totalRecibido": 7500.00,
-       "numeroTransacciones": 15
-     }
+     "nombres": "string",
+     "apellidos": "string",
+     "edad": 0,
+     "direccion": "user@example.com",
+     "numero_documento": "string",
+     "tipo_documento": "string",
+     "saldo_total": 0,
+     "rol": "string"
    }
 
-**Códigos de Error:**
+**Respuestas:**
 
-- **401 Unauthorized**: Token inválido o expirado
-- **403 Forbidden**: No tiene permisos para acceder
-- **500 Internal Server Error**: Error del servidor
+- **200 Successful Response** - Usuario actualizado correctamente
+- **422 Validation Error** - Error de validación en los datos
+
+**Ejemplo de Respuesta Exitosa:**
+
+.. image:: _static/fastapi_3.png
+   :alt: Esquema de respuesta UserProfileComplete
+   :align: center
+   :width: 80%
+
+.. code-block:: json
+
+   {
+     "id_usuario": 0,
+     "nombres": "string",
+     "apellidos": "string",
+     "correo": "string",
+     "telefono": "string",
+     "numero_documento": "string",
+     "tipo_documento": "string",
+     "saldo_total": 0
+   }
 
 Estructura de Datos
 -------------------
 
-Transacción
-~~~~~~~~~~~
+UserProfileComplete
+~~~~~~~~~~~~~~~~~~~
+
+Esquema completo del perfil de usuario.
 
 .. list-table::
-   :widths: 20 20 60
+   :widths: 30 20 50
    :header-rows: 1
 
    * - Campo
      - Tipo
      - Descripción
-   * - id
-     - Long
-     - Identificador único de la transacción
-   * - tipo
-     - String
-     - Tipo de transacción (ENVIO, RECEPCION, SOLICITUD)
-   * - monto
-     - Double
-     - Monto de la transacción
-   * - destinatario
-     - String
-     - Email del usuario que recibe el dinero
-   * - remitente
-     - String
-     - Email del usuario que envía el dinero
-   * - fecha
-     - DateTime
-     - Fecha y hora de la transacción
-   * - estado
-     - String
-     - Estado de la transacción (PENDIENTE, COMPLETADA, RECHAZADA)
-
-Estadísticas
-~~~~~~~~~~~~
-
-.. list-table::
-   :widths: 20 20 60
-   :header-rows: 1
-
-   * - Campo
-     - Tipo
-     - Descripción
-   * - totalEnviado
-     - Double
-     - Total de dinero enviado por el usuario
-   * - totalRecibido
-     - Double
-     - Total de dinero recibido por el usuario
-   * - numeroTransacciones
-     - Integer
-     - Cantidad total de transacciones realizadas
+   * - id_usuario
+     - integer
+     - Identificador único del usuario
+   * - nombres
+     - string
+     - Nombres del usuario
+   * - apellidos
+     - string
+     - Apellidos del usuario
+   * - correo
+     - string (email)
+     - Correo electrónico del usuario
+   * - telefono
+     - string | null
+     - Número de teléfono (opcional)
+   * - numero_documento
+     - string
+     - Número de documento de identidad
+   * - tipo_documento
+     - string
+     - Tipo de documento (CC, TI, CE, etc.)
+   * - saldo_total
+     - number
+     - Saldo actual en la cuenta
 
 Ejemplo de Implementación
 --------------------------
 
-JavaScript (Frontend)
-~~~~~~~~~~~~~~~~~~~~~
+Registro de Usuario
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   curl -X POST "http://localhost:8000/usuarios/registro" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "nombres": "Juan",
+       "apellidos": "Pérez",
+       "correo": "juan@example.com",
+       "telefono": "3001234567",
+       "numero_documento": "1234567890",
+       "tipo_documento": "CC",
+       "contraseña": "MiPassword123!"
+     }'
+
+Login
+~~~~~
+
+.. code-block:: bash
+
+   curl -X POST "http://localhost:8000/usuarios/login-json" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "correo": "juan@example.com",
+       "contraseña": "MiPassword123!"
+     }'
+
+Obtener Mi Perfil
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   curl -X GET "http://localhost:8000/usuarios/me" \
+     -H "Authorization: Bearer {tu_token_jwt}"
+
+Actualizar Usuario
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   curl -X PUT "http://localhost:8000/usuarios/1" \
+     -H "Authorization: Bearer {tu_token_jwt}" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "nombres": "Juan Carlos",
+       "apellidos": "Pérez García",
+       "telefono": "3009876543"
+     }'
+
+JavaScript (Fetch API)
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: javascript
 
-   async function obtenerDashboard() {
-     const token = localStorage.getItem('token');
+   // Login
+   async function login(correo, contraseña) {
+     const response = await fetch('http://localhost:8000/usuarios/login-json', {
+       method: 'POST',
+       headers: {
+         'Content-Type': 'application/json'
+       },
+       body: JSON.stringify({ correo, contraseña })
+     });
      
-     try {
-       const response = await fetch('http://localhost:8080/api/dashboard', {
-         method: 'GET',
-         headers: {
-           'Authorization': `Bearer ${token}`,
-           'Content-Type': 'application/json'
-         }
-       });
-       
-       if (response.ok) {
-         const data = await response.json();
-         console.log('Saldo:', data.saldo);
-         console.log('Transacciones:', data.transaccionesRecientes);
-         return data;
-       } else {
-         throw new Error('Error al obtener dashboard');
-       }
-     } catch (error) {
-       console.error('Error:', error);
+     const data = await response.json();
+     if (response.ok) {
+       localStorage.setItem('token', data.access_token);
+       return data;
      }
+     throw new Error(data.detail);
    }
 
-Java (Backend - Controller)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: java
-
-   @RestController
-   @RequestMapping("/api/dashboard")
-   public class DashboardController {
-       
-       @Autowired
-       private DashboardService dashboardService;
-       
-       @GetMapping
-       public ResponseEntity<DashboardResponse> getDashboard(
-           @AuthenticationPrincipal UserDetails userDetails
-       ) {
-           DashboardResponse dashboard = dashboardService
-               .getDashboardData(userDetails.getUsername());
-           return ResponseEntity.ok(dashboard);
+   // Obtener perfil
+   async function obtenerPerfil() {
+     const token = localStorage.getItem('token');
+     const response = await fetch('http://localhost:8000/usuarios/me/complete', {
+       headers: {
+         'Authorization': `Bearer ${token}`
        }
+     });
+     
+     if (response.ok) {
+       return await response.json();
+     }
+     throw new Error('Error al obtener perfil');
    }
+
+Python (Requests)
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: python
+
+   import requests
+
+   # Login
+   def login(correo: str, contraseña: str):
+       response = requests.post(
+           'http://localhost:8000/usuarios/login-json',
+           json={'correo': correo, 'contraseña': contraseña}
+       )
+       if response.status_code == 200:
+           return response.json()
+       raise Exception(response.json()['detail'])
+
+   # Obtener perfil
+   def obtener_perfil(token: str):
+       headers = {'Authorization': f'Bearer {token}'}
+       response = requests.get(
+           'http://localhost:8000/usuarios/me/complete',
+           headers=headers
+       )
+       if response.status_code == 200:
+           return response.json()
+       raise Exception('Error al obtener perfil')
+
+Códigos de Estado HTTP
+-----------------------
+
+.. list-table::
+   :widths: 15 85
+   :header-rows: 1
+
+   * - Código
+     - Descripción
+   * - 200
+     - Operación exitosa
+   * - 201
+     - Recurso creado exitosamente
+   * - 400
+     - Solicitud incorrecta
+   * - 401
+     - No autenticado - Token inválido o expirado
+   * - 403
+     - No autorizado - Sin permisos suficientes
+   * - 404
+     - Recurso no encontrado
+   * - 422
+     - Error de validación en los datos enviados
+   * - 500
+     - Error interno del servidor
 
 Notas Importantes
 -----------------
 
 .. note::
 
-   El Dashboard se actualiza en tiempo real cada vez que se realiza una transacción.
-   Las transacciones recientes muestran las últimas 10 operaciones del usuario.
+   **Autenticación JWT**
+   
+   - El token JWT se obtiene al hacer login exitosamente
+   - El token debe incluirse en el header ``Authorization: Bearer {token}``
+   - Los tokens expiran después de cierto tiempo (configurable)
+   - Endpoints marcados con 🔒 requieren autenticación
 
 .. warning::
 
-   El token JWT debe ser válido y no estar expirado para acceder a este endpoint.
-   La sesión expira después de 24 horas de inactividad.
+   **Seguridad**
+   
+   - Nunca compartas tu token JWT
+   - Las contraseñas deben tener al menos 8 caracteres
+   - Se recomienda usar HTTPS en producción
+   - Los datos sensibles se encriptan en la base de datos
+
+.. tip::
+
+   **Mejores Prácticas**
+   
+   - Almacena el token de forma segura (localStorage, cookies seguras)
+   - Implementa refresh tokens para mejorar la experiencia del usuario
+   - Maneja los errores 401 para redirigir al login
+   - Valida los datos en el frontend antes de enviarlos
+
+Documentación Interactiva
+--------------------------
+
+FastAPI proporciona documentación interactiva automática:
+
+- **Swagger UI**: http://localhost:8000/docs
+- **ReDoc**: http://localhost:8000/redoc
+- **OpenAPI Schema**: http://localhost:8000/openapi.json
+
+Estas interfaces permiten probar los endpoints directamente desde el navegador.
