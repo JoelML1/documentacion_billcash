@@ -32,25 +32,25 @@ body {
     line-height: 1.6;
 }
 
-/* Contenedor principal - Más ancho */
+/* Contenedor principal - Alineado con sidebar */
 .document {
     background-color: var(--billcash-dark) !important;
-    margin: 0 0 0 280px;
-    padding: 40px 80px;
+    margin: 0 auto 0 280px;
+    padding: 40px 60px;
     min-height: 100vh;
-    max-width: none !important;
+    max-width: 1200px !important;
 }
 
 .documentwrapper {
     background: var(--billcash-darker) !important;
-    max-width: none !important;
-    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
 }
 
 .bodywrapper {
     background: var(--billcash-dark) !important;
-    margin: 0 !important;
-    max-width: none !important;
+    margin: 0 auto !important;
+    max-width: 1200px !important;
 }
 
 .body {
