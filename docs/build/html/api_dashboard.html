@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dashboard - API REST &#8212; documentación de BillCash - 1.0.0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=8203d6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=86f9e451" />
+    <link rel="stylesheet" type="text/css" href="_static/billcash_modern.css?v=c85e4a4d" />
+    <script src="_static/documentation_options.js?v=36c4ab74"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=f85f4cfb"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Casos de Uso - BillCash" href="casos_uso.html" />
+    <link rel="prev" title="BillCash - Documentación del Sistema" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/billcash_logo.png" alt="Logo" />
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Sistema de gestión de pagos y facturación</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=JoelML1&repo=documentacion_billcash&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegación</h3>
+<p class="caption" role="heading"><span class="caption-text">API Endpoints</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dashboard - API REST</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#endpoints-del-dashboard">Endpoints del Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#estructura-de-datos">Estructura de Datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejemplo-de-implementacion">Ejemplo de Implementación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notas-importantes">Notas Importantes</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentación:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="casos_uso.html">Casos de Uso - BillCash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual_index.html">Manual de Usuario - BillCash</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="capítulo anterior">BillCash - Documentación del Sistema</a></li>
+      <li>Next: <a href="casos_uso.html" title="próximo capítulo">Casos de Uso - BillCash</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="dashboard-api-rest">
+<h1>Dashboard - API REST<a class="headerlink" href="#dashboard-api-rest" title="Link to this heading">¶</a></h1>
+<p>El Dashboard proporciona una vista general del estado de la cuenta del usuario, incluyendo el saldo actual y el resumen de transacciones recientes.</p>
+<section id="endpoints-del-dashboard">
+<h2>Endpoints del Dashboard<a class="headerlink" href="#endpoints-del-dashboard" title="Link to this heading">¶</a></h2>
+<section id="obtener-informacion-del-dashboard">
+<h3>Obtener Información del Dashboard<a class="headerlink" href="#obtener-informacion-del-dashboard" title="Link to this heading">¶</a></h3>
+<p>Devuelve el saldo actual del usuario y sus transacciones recientes.</p>
+<p><strong>Endpoint:</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">GET /api/dashboard</span>
+</pre></div>
+</div>
+<p><strong>Headers:</strong></p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">Authorization: Bearer {token}</span>
+<span class="err">Content-Type: application/json</span>
+</pre></div>
+</div>
+<p><strong>Respuesta Exitosa (200 OK):</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;saldo&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5000.00</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;transaccionesRecientes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tipo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ENVIO&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;monto&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">500.00</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;destinatario&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;usuario@example.com&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;fecha&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-12-03T10:30:00&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;estado&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COMPLETADA&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tipo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RECEPCION&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;monto&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1000.00</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;remitente&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;otro@example.com&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;fecha&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-12-02T15:45:00&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;estado&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COMPLETADA&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;estadisticas&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;totalEnviado&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2500.00</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;totalRecibido&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">7500.00</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;numeroTransacciones&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Códigos de Error:</strong></p>
+<ul class="simple">
+<li><p><strong>401 Unauthorized</strong>: Token inválido o expirado</p></li>
+<li><p><strong>403 Forbidden</strong>: No tiene permisos para acceder</p></li>
+<li><p><strong>500 Internal Server Error</strong>: Error del servidor</p></li>
+</ul>
+</section>
+</section>
+<section id="estructura-de-datos">
+<h2>Estructura de Datos<a class="headerlink" href="#estructura-de-datos" title="Link to this heading">¶</a></h2>
+<section id="transaccion">
+<h3>Transacción<a class="headerlink" href="#transaccion" title="Link to this heading">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Long</p></td>
+<td><p>Identificador único de la transacción</p></td>
+</tr>
+<tr class="row-odd"><td><p>tipo</p></td>
+<td><p>String</p></td>
+<td><p>Tipo de transacción (ENVIO, RECEPCION, SOLICITUD)</p></td>
+</tr>
+<tr class="row-even"><td><p>monto</p></td>
+<td><p>Double</p></td>
+<td><p>Monto de la transacción</p></td>
+</tr>
+<tr class="row-odd"><td><p>destinatario</p></td>
+<td><p>String</p></td>
+<td><p>Email del usuario que recibe el dinero</p></td>
+</tr>
+<tr class="row-even"><td><p>remitente</p></td>
+<td><p>String</p></td>
+<td><p>Email del usuario que envía el dinero</p></td>
+</tr>
+<tr class="row-odd"><td><p>fecha</p></td>
+<td><p>DateTime</p></td>
+<td><p>Fecha y hora de la transacción</p></td>
+</tr>
+<tr class="row-even"><td><p>estado</p></td>
+<td><p>String</p></td>
+<td><p>Estado de la transacción (PENDIENTE, COMPLETADA, RECHAZADA)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="estadisticas">
+<h3>Estadísticas<a class="headerlink" href="#estadisticas" title="Link to this heading">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Campo</p></th>
+<th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>totalEnviado</p></td>
+<td><p>Double</p></td>
+<td><p>Total de dinero enviado por el usuario</p></td>
+</tr>
+<tr class="row-odd"><td><p>totalRecibido</p></td>
+<td><p>Double</p></td>
+<td><p>Total de dinero recibido por el usuario</p></td>
+</tr>
+<tr class="row-even"><td><p>numeroTransacciones</p></td>
+<td><p>Integer</p></td>
+<td><p>Cantidad total de transacciones realizadas</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ejemplo-de-implementacion">
+<h2>Ejemplo de Implementación<a class="headerlink" href="#ejemplo-de-implementacion" title="Link to this heading">¶</a></h2>
+<section id="javascript-frontend">
+<h3>JavaScript (Frontend)<a class="headerlink" href="#javascript-frontend" title="Link to this heading">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">obtenerDashboard</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;token&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;http://localhost:8080/api/dashboard&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s1">&#39;Authorization&#39;</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+<span class="w">        </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Saldo:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">saldo</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Transacciones:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">transaccionesRecientes</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">data</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">&#39;Error al obtener dashboard&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="java-backend-controller">
+<h3>Java (Backend - Controller)<a class="headerlink" href="#java-backend-controller" title="Link to this heading">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@RestController</span>
+<span class="nd">@RequestMapping</span><span class="p">(</span><span class="s">&quot;/api/dashboard&quot;</span><span class="p">)</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DashboardController</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Autowired</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">DashboardService</span><span class="w"> </span><span class="n">dashboardService</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nd">@GetMapping</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">DashboardResponse</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getDashboard</span><span class="p">(</span>
+<span class="w">        </span><span class="nd">@AuthenticationPrincipal</span><span class="w"> </span><span class="n">UserDetails</span><span class="w"> </span><span class="n">userDetails</span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">DashboardResponse</span><span class="w"> </span><span class="n">dashboard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dashboardService</span>
+<span class="w">            </span><span class="p">.</span><span class="na">getDashboardData</span><span class="p">(</span><span class="n">userDetails</span><span class="p">.</span><span class="na">getUsername</span><span class="p">());</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ResponseEntity</span><span class="p">.</span><span class="na">ok</span><span class="p">(</span><span class="n">dashboard</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="notas-importantes">
+<h2>Notas Importantes<a class="headerlink" href="#notas-importantes" title="Link to this heading">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>El Dashboard se actualiza en tiempo real cada vez que se realiza una transacción.
+Las transacciones recientes muestran las últimas 10 operaciones del usuario.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p>El token JWT debe ser válido y no estar expirado para acceder a este endpoint.
+La sesión expira después de 24 horas de inactividad.</p>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;2025, joel medina, juan salinas, david torres.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/api_dashboard.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

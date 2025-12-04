@@ -31,6 +31,15 @@ BillCash es una plataforma que permite:
 * Integración con múltiples métodos de pago
 * Automatización de procesos de cobro
 
+Documentación de la API REST
+=============================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: API Endpoints
+
+   api_dashboard
+
 Requisitos Funcionales
 =======================
 
