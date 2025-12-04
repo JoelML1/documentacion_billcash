@@ -3,7 +3,7 @@ Dashboard - API REST
 
 El Dashboard proporciona una vista general del estado de la cuenta del usuario, incluyendo el saldo actual y el resumen de transacciones recientes.
 
-.. image:: _static/fastapi_1.png
+.. image:: _static/fastapi_1.jpg
    :alt: BillCash Digital Wallet API
    :align: center
    :width: 100%
@@ -57,7 +57,7 @@ Obtener Perfil de Usuario
 
 Endpoint para obtener el perfil completo del usuario autenticado.
 
-.. image:: _static/fastapi_2.png
+.. image:: _static/fastapi_2.jpg
    :alt: Endpoint Actualizar Usuario
    :align: center
    :width: 100%
@@ -103,7 +103,7 @@ Endpoint para obtener el perfil completo del usuario autenticado.
 
 **Ejemplo de Respuesta Exitosa:**
 
-.. image:: _static/fastapi_3.png
+.. image:: _static/fastapi_3.jpg
    :alt: Esquema de respuesta UserProfileComplete
    :align: center
    :width: 80%
