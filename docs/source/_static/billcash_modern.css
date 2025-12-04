@@ -58,6 +58,42 @@ div.body {
     color: var(--billcash-white) !important;
 }
 
+/* Sobrescribir TODOS los fondos del tema Alabaster */
+div.sphinxsidebar,
+div.sphinxsidebarwrapper,
+div.document,
+div.documentwrapper,
+div.bodywrapper,
+div.body,
+div.clearer,
+div.footer,
+div.related {
+    background: var(--billcash-darker) !important;
+}
+
+div.body {
+    background: var(--billcash-dark) !important;
+}
+
+/* Forzar que el contenido principal sea oscuro */
+div.section,
+section {
+    background: transparent !important;
+    color: var(--billcash-white) !important;
+}
+
+/* Título de la página */
+.section h1,
+.section h2,
+.section h3,
+.section p,
+.section li,
+.section td,
+.section dd,
+.section dt {
+    color: var(--billcash-white) !important;
+}
+
 /* Encabezados modernos */
 h1 {
     color: var(--billcash-white) !important;
