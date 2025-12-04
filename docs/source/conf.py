@@ -42,6 +42,7 @@ html_theme_options = {
     'github_button': True,
     'github_type': 'star',
     'fixed_sidebar': True,
-    'page_width': '100%',
+    'page_width': 'auto',
     'sidebar_width': '280px',
+    'body_max_width': 'none',
 }
