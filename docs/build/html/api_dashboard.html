@@ -17,7 +17,7 @@
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Casos de Uso - BillCash" href="casos_uso.html" />
-    <link rel="prev" title="BillCash - Documentación del Sistema" href="index.html" />
+    <link rel="prev" title="7. Cartera (Transacciones)" href="manual_cartera.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -63,7 +63,11 @@
     </div>
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegación</h3>
-<p class="caption" role="heading"><span class="caption-text">API Endpoints</span></p>
+<p class="caption" role="heading"><span class="caption-text">📱 Manual de Usuario</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="manual_index.html">1. Manual de Usuario - BillCash</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🔧 API REST - Documentación Técnica</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Dashboard - API REST</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#vista-general-de-la-api">Vista General de la API</a></li>
@@ -78,17 +82,21 @@
 </ul>
 </li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">📋 Casos de Uso</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="casos_uso.html">Casos de Uso - BillCash</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Documentación:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="casos_uso.html">Casos de Uso - BillCash</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual_index.html">Manual de Usuario - BillCash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual_index.html">1. Manual de Usuario - BillCash</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="capítulo anterior">BillCash - Documentación del Sistema</a></li>
+      <li>Previous: <a href="manual_cartera.html" title="capítulo anterior"><span class="section-number">7. </span>Cartera (Transacciones)</a></li>
       <li>Next: <a href="casos_uso.html" title="próximo capítulo">Casos de Uso - BillCash</a></li>
   </ul></li>
 </ul>
@@ -153,22 +161,120 @@
 </a>
 <p><em>Imagen 5: Conjunto completo de endpoints para la gestión de usuarios. Incluye operaciones de autenticación (login, registro), consulta de perfiles, actualización de datos, eliminación de cuentas y recuperación de contraseñas. Los endpoints marcados con candado requieren autenticación JWT.</em></p>
 <p>🔒 = Requiere Autenticación</p>
+<p><strong>cuentas</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/cuentas/</span></code> - Listar Cuentas 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/cuentas/</span></code> - Crear Cuenta 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/cuentas/mis-cuentas</span></code> - Obtener Mis Cuentas 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/cuentas/mis-movimientos</span></code> - Obtener Todos Mis Movimientos 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/cuentas/{cuenta_id}</span></code> - Obtener Cuenta 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/cuentas/{cuenta_id}</span></code> - Actualizar Cuenta 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">/cuentas/{cuenta_id}</span></code> - Eliminar Cuenta 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/cuentas/{cuenta_id}/agregar-saldo</span></code> - Agregar Saldo 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/cuentas/{cuenta_id}/movimientos</span></code> - Obtener Movimientos Cuenta 🔒</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/fastapi_C1.png"><img alt="Endpoints de cuentas" class="align-center" src="_images/fastapi_C1.png" style="width: 100%;" />
+</a>
+<p><em>Imagen C1: Endpoints completos para la gestión de cuentas bancarias. Permite crear, listar, consultar, actualizar y eliminar cuentas. Incluye funcionalidades especiales como agregar saldo a una cuenta, obtener todas las cuentas del usuario autenticado y consultar el historial de movimientos (depósitos/recargas) de cada cuenta.</em></p>
+<p><strong>tarjetas</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/tarjetas/</span></code> - Listar Tarjetas 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/tarjetas/solicitar</span></code> - Solicitar Tarjeta 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/tarjetas/mis</span></code> - Obtener Mis Tarjetas 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/tarjetas/{tarjeta_id}/bloquear</span></code> - Cambiar Estado Tarjeta 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">/tarjetas/{tarjeta_id}</span></code> - Eliminar Tarjeta 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/tarjetas/{tarjeta_id}</span></code> - Obtener Tarjeta 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/tarjetas/{tarjeta_id}</span></code> - Actualizar Tarjeta 🔒</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/fastapi_T1.png"><img alt="Endpoints de tarjetas" class="align-center" src="_images/fastapi_T1.png" style="width: 100%;" />
+</a>
+<p><em>Imagen T1: Endpoints completos para la gestión de tarjetas virtuales. Permite solicitar nuevas tarjetas, listar todas las tarjetas del sistema, obtener las tarjetas propias del usuario autenticado, consultar detalles de tarjetas específicas, actualizar información, bloquear/desbloquear tarjetas y eliminarlas. Sistema integral para administración de tarjetas de débito/crédito virtuales.</em></p>
 <p><strong>transacciones</strong></p>
-<a class="reference internal image-reference" href="_images/fastapi_6.jpg"><img alt="Endpoints de transacciones" class="align-center" src="_images/fastapi_6.jpg" style="width: 100%;" />
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/transacciones/</span></code> - Crear Transacción 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/transacciones/mis</span></code> - Listar Mis Transacciones 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/transacciones/usuario/{usuario_id}</span></code> - Listar Transacciones Usuario 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/transacciones/{transaccion_id}</span></code> - Obtener Transacción 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/transacciones/{transaccion_id}</span></code> - Actualizar Transacción 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">/transacciones/{transaccion_id}</span></code> - Eliminar Transacción 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/transacciones/transferir</span></code> - Transferir Fondos 🔒</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/fastapi_TR1.png"><img alt="Endpoints de transacciones" class="align-center" src="_images/fastapi_TR1.png" style="width: 100%;" />
 </a>
-<p><em>Imagen 6: Endpoints para la gestión de transacciones financieras. Permite crear, consultar, listar y eliminar transacciones entre usuarios de la wallet digital. Incluye filtros por usuario, fecha y tipo de transacción.</em></p>
+<p><em>Imagen TR1: Endpoints completos para la gestión de transacciones financieras. Permite crear transacciones generales, obtener el historial completo de transacciones del usuario autenticado, consultar transacciones de usuarios específicos (para administradores), obtener detalles de transacciones individuales, actualizar información, eliminar transacciones y realizar transferencias de fondos entre cuentas. Sistema integral de seguimiento y administración de movimientos financieros.</em></p>
+<p><strong>pagos de servicios</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/pagos/</span></code> - Listar Pagos Usuario 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/pagos/</span></code> - Crear Pago Servicio 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/pagos/metodos-pago</span></code> - Obtener Métodos Pago 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/pagos/{pago_id}</span></code> - Obtener Pago Detalle 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/pagos/{pago_id}/confirmar</span></code> - Confirmar Pago Externo 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/pagos/estadisticas/usuario</span></code> - Obtener Estadísticas Pagos 🔒</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/fastapi_P1.png"><img alt="Endpoints de pagos de servicios" class="align-center" src="_images/fastapi_P1.png" style="width: 100%;" />
+</a>
+<p><em>Imagen P1: Endpoints completos para el sistema de pagos de servicios. Permite listar todos los pagos del usuario, crear nuevos pagos con descuento automático de cartera, obtener los métodos de pago disponibles (cartera, efecty, pse, etc.), consultar detalles de pagos específicos, confirmar pagos externos (Efecty/PSE) y obtener estadísticas de consumo. Sistema integral para gestión de pagos de servicios públicos y privados.</em></p>
+<p><strong>soportes</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/soportes/</span></code> - Listar Tickets 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/soportes/</span></code> - Crear Ticket 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/soportes/{ticket_id}</span></code> - Obtener Ticket 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/soportes/{ticket_id}</span></code> - Actualizar Ticket 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">/soportes/{ticket_id}</span></code> - Eliminar Ticket 🔒</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/fastapi_SO1.png"><img alt="Endpoints de soportes" class="align-center" src="_images/fastapi_SO1.png" style="width: 100%;" />
+</a>
+<p><em>Imagen SO1: Endpoints completos para el sistema de tickets de soporte. Permite a los usuarios crear tickets de soporte técnico o consultas, listar todos sus tickets, consultar detalles específicos, actualizar el estado o información de tickets y eliminar tickets resueltos. Sistema integral de atención al cliente y soporte técnico para la wallet digital.</em></p>
 <p><strong>solicitudes</strong></p>
-<a class="reference internal image-reference" href="_images/fastapi_7.jpg"><img alt="Endpoints de solicitudes" class="align-center" src="_images/fastapi_7.jpg" style="width: 100%;" />
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/solicitudes/crear</span></code> - Crear Solicitud Dinero 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/solicitudes/mis-solicitudes</span></code> - Obtener Mis Solicitudes 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/solicitudes/recibidas</span></code> - Obtener Solicitudes Recibidas 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/solicitudes/{id_solicitud}/aceptar</span></code> - Aceptar Solicitud 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/solicitudes/{id_solicitud}/rechazar</span></code> - Rechazar Solicitud 🔒</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/fastapi_SD1.png"><img alt="Endpoints de solicitudes" class="align-center" src="_images/fastapi_SD1.png" style="width: 100%;" />
 </a>
-<p><em>Imagen 7: Endpoints para el manejo de solicitudes de dinero entre usuarios. Los usuarios pueden crear solicitudes de pago, aceptarlas, rechazarlas o cancelarlas. Incluye consultas por estado (pendiente, aceptada, rechazada).</em></p>
+<p><em>Imagen SD1: Endpoints completos para el manejo de solicitudes de dinero entre usuarios. Permite crear nuevas solicitudes de dinero especificando destinatario y monto, obtener todas las solicitudes creadas por el usuario actual, ver solicitudes recibidas pendientes de aprobación/rechazo, aceptar solicitudes realizando la transferencia automáticamente y rechazar solicitudes. Sistema integral de solicitudes peer-to-peer.</em></p>
 <p><strong>notificaciones</strong></p>
-<a class="reference internal image-reference" href="_images/fastapi_8.jpg"><img alt="Endpoints de notificaciones" class="align-center" src="_images/fastapi_8.jpg" style="width: 100%;" />
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/notificaciones/mis-notificaciones</span></code> - Obtener Mis Notificaciones 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/notificaciones/no-leidas/count</span></code> - Contar No Leídas 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/notificaciones/{id_notificacion}/marcar-leida</span></code> - Marcar Como Leída 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/notificaciones/marcar-todas-leidas</span></code> - Marcar Todas Leídas 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">/notificaciones/{id_notificacion}</span></code> - Eliminar Notificación 🔒</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/fastapi_NO1.png"><img alt="Endpoints de notificaciones" class="align-center" src="_images/fastapi_NO1.png" style="width: 100%;" />
 </a>
-<p><em>Imagen 8: Sistema de notificaciones en tiempo real. Permite listar, marcar como leídas y eliminar notificaciones del usuario. Las notificaciones se generan automáticamente ante eventos como transacciones recibidas, solicitudes de dinero o cambios en el estado de la cuenta.</em></p>
+<p><em>Imagen NO1: Sistema completo de notificaciones en tiempo real. Permite obtener todas las notificaciones del usuario con opciones de paginación (solo_no_leidas, limite), contar notificaciones no leídas para mostrar badges, marcar notificaciones individuales como leídas, marcar todas como leídas de una vez y eliminar notificaciones específicas. Las notificaciones se generan automáticamente ante eventos importantes como transacciones recibidas, solicitudes de dinero, cambios de estado en cuentas o pagos.</em></p>
 <p><strong>categorias</strong></p>
 <a class="reference internal image-reference" href="_images/fastapi_9.jpg"><img alt="Endpoints de categorías" class="align-center" src="_images/fastapi_9.jpg" style="width: 100%;" />
 </a>
 <p><em>Imagen 9: Gestión de categorías para clasificar transacciones. Los usuarios pueden crear categorías personalizadas (Alimentación, Transporte, Entretenimiento, etc.) para organizar mejor sus gastos e ingresos.</em></p>
+<p><strong>consentimientos</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/consentimientos/registrar</span></code> - Registrar Consentimiento 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/consentimientos/mis-consentimientos</span></code> - Obtener Mis Consentimientos 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/consentimientos/verificar/{tipo}</span></code> - Verificar Consentimiento 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/consentimientos/revocar/{tipo}</span></code> - Revocar Consentimiento 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/consentimientos/admin/todos</span></code> - Ver Todos Consentimientos Admin 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/consentimientos/admin/estadisticas</span></code> - Estadísticas Consentimientos Admin 🔒</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/fastapi_CO1.png"><img alt="Endpoints de consentimientos" class="align-center" src="_images/fastapi_CO1.png" style="width: 100%;" />
+</a>
+<p><em>Imagen CO1: Sistema completo de gestión de consentimientos del usuario (términos, privacidad, datos). Permite registrar nuevos consentimientos del usuario especificando el tipo, obtener todos los consentimientos registrados del usuario actual, verificar si el usuario ha aceptado un tipo específico de consentimiento, revocar un consentimiento aceptado (acepto=False), y endpoints administrativos para ver todos los consentimientos del sistema opcionalmente filtrados por tipo y obtener estadísticas generales de aceptación.</em></p>
+<p><strong>solicitudes de eliminación</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/usuarios/solicitud-eliminacion</span></code> - Crear Solicitud Eliminación 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/usuarios/mis-solicitudes-eliminacion</span></code> - Obtener Mis Solicitudes Eliminación 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">/usuarios/cancelar-solicitud-eliminacion/{id_solicitud}</span></code> - Cancelar Solicitud Eliminación 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/usuarios/admin/solicitudes-eliminacion</span></code> - Listar Solicitudes Eliminación Admin 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/usuarios/admin/solicitudes-eliminacion/{id_solicitud}</span></code> - Resolver Solicitud Eliminación Admin 🔒</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/usuarios/admin/estadisticas-eliminaciones</span></code> - Estadísticas Eliminaciones Admin 🔒</p></li>
+</ul>
+<a class="reference internal image-reference" href="_static/fastapi_SE1.png"><img alt="Endpoints de solicitudes de eliminación" class="align-center" src="_static/fastapi_SE1.png" style="width: 100%;" />
+</a>
+<p><em>Imagen SE1: Sistema completo de solicitudes de eliminación de cuenta (NUEVO SISTEMA). Permite a los usuarios crear solicitudes de eliminación de cuenta proporcionando contraseña, confirmación y razón, obtener el estado de sus solicitudes pendientes, cancelar solicitudes antes de ser procesadas, y endpoints administrativos para listar todas las solicitudes filtradas por estado, aprobar/rechazar solicitudes con comentarios del administrador y obtener estadísticas del sistema de eliminaciones.</em></p>
 </section>
 <section id="autenticacion">
 <h2>Autenticación<a class="headerlink" href="#autenticacion" title="Link to this heading">¶</a></h2>
@@ -306,21 +412,63 @@
 </section>
 <section id="schemas-de-solicitudes">
 <h3>Schemas de Solicitudes<a class="headerlink" href="#schemas-de-solicitudes" title="Link to this heading">¶</a></h3>
-<a class="reference internal image-reference" href="_images/fastapi_12.jpg"><img alt="Schemas de solicitudes" class="align-center" src="_images/fastapi_12.jpg" style="width: 80%;" />
+<a class="reference internal image-reference" href="_images/fastapi_SD2.png"><img alt="Schemas de solicitudes" class="align-center" src="_images/fastapi_SD2.png" style="width: 80%;" />
 </a>
-<p><em>Imagen 12: Estructuras de datos para el sistema de solicitudes de dinero. Incluye SolicitudCreate, SolicitudResponse y SolicitudUpdate con campos para monto solicitado, usuario solicitante/destinatario, estado (pendiente/aceptada/rechazada) y descripción opcional.</em></p>
+<p><em>Imagen SD2: Modelos de datos para el sistema de solicitudes de dinero peer-to-peer. Define la estructura de SolicitudCreate (para crear nuevas solicitudes con campos como id_usuario_destinatario y monto), SolicitudResponse (respuesta del servidor con toda la información incluyendo id_solicitud, id_usuario_solicitante, id_usuario_destinatario, monto, estado, fecha_creacion, fecha_respuesta, solicitante_nombres, solicitante_apellidos, destinatario_nombres y destinatario_correo) y estados (pendiente/aceptada/rechazada).</em></p>
 </section>
 <section id="schemas-de-notificaciones">
 <h3>Schemas de Notificaciones<a class="headerlink" href="#schemas-de-notificaciones" title="Link to this heading">¶</a></h3>
-<a class="reference internal image-reference" href="_images/fastapi_13.jpg"><img alt="Schemas de notificaciones" class="align-center" src="_images/fastapi_13.jpg" style="width: 80%;" />
+<a class="reference internal image-reference" href="_images/fastapi_NO2.png"><img alt="Schemas de notificaciones" class="align-center" src="_images/fastapi_NO2.png" style="width: 80%;" />
 </a>
-<p><em>Imagen 13: Modelos para el sistema de notificaciones. Define NotificacionCreate y NotificacionResponse con campos como título, mensaje, tipo de notificación, estado de lectura y fecha de creación. Permite mantener informados a los usuarios sobre eventos importantes.</em></p>
+<p><em>Imagen NO2: Modelos de datos para el sistema de notificaciones. Define la estructura de NotificacionCreate (para generar nuevas notificaciones con campos como id_notificacion, titulo, mensaje, tipo e is_read), NotificacionResponse (respuesta del servidor con toda la información incluyendo id_notificacion, leida y fecha_creacion) y NotificacionUpdate (para actualizar el estado de lectura). Incluye validación de tipos de notificación y estados de lectura (true/false).</em></p>
 </section>
 <section id="schemas-de-categorias">
 <h3>Schemas de Categorías<a class="headerlink" href="#schemas-de-categorias" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_14.jpg"><img alt="Schemas de categorías" class="align-center" src="_images/fastapi_14.jpg" style="width: 80%;" />
 </a>
 <p><em>Imagen 14: Estructura de datos para categorías de transacciones. CategoriaCreate y CategoriaResponse incluyen nombre, descripción, icono y color para personalizar la clasificación de gastos e ingresos del usuario.</em></p>
+</section>
+<section id="schemas-de-consentimientos">
+<h3>Schemas de Consentimientos<a class="headerlink" href="#schemas-de-consentimientos" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_CO2.png"><img alt="Schemas de consentimientos" class="align-center" src="_images/fastapi_CO2.png" style="width: 80%;" />
+</a>
+<p><em>Imagen CO2: Modelos de datos para el sistema de consentimientos. Define la estructura de ConsentimientoCreate/ConsentimientoRegistrar (para registrar nuevos consentimientos con campos como tipo, acepto, fecha_aceptacion y user_agent), ConsentimientoResponse (respuesta del servidor con toda la información incluyendo id_consentimiento, tipo, acepto, fecha_aceptacion y user_agent) y validaciones de tipos de consentimiento (términos, privacidad, datos).</em></p>
+</section>
+<section id="schemas-de-solicitudes-de-eliminacion">
+<h3>Schemas de Solicitudes de Eliminación<a class="headerlink" href="#schemas-de-solicitudes-de-eliminacion" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_static/fastapi_SE2.png"><img alt="Schemas de solicitudes de eliminación" class="align-center" src="_static/fastapi_SE2.png" style="width: 80%;" />
+</a>
+<p><em>Imagen SE2: Modelos de datos para solicitudes de eliminación de cuenta. Define la estructura de SolicitudEliminacionCreate (para crear nuevas solicitudes con campos como password, confirmacion, razon y fecha_limite), SolicitudEliminacionResponse (respuesta del servidor con toda la información incluyendo id_solicitud, estado, fecha_creacion, fecha_limite y mensaje) y validaciones de estados (pendiente, aprobada, rechazada, cancelada).</em></p>
+</section>
+<section id="schemas-de-cuentas">
+<h3>Schemas de Cuentas<a class="headerlink" href="#schemas-de-cuentas" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_C2.png"><img alt="Schemas de cuentas" class="align-center" src="_images/fastapi_C2.png" style="width: 80%;" />
+</a>
+<p><em>Imagen C2: Modelos de datos para cuentas bancarias. Define la estructura de CuentaCreate (para registrar nuevas cuentas con campos como numero_cuenta, saldo, moneda y tipo_cuenta), CuentaResponse (respuesta del servidor con toda la información incluyendo id_cuenta, id_usuario y fecha_creacion) y CuentaUpdate (para actualizar información parcial de la cuenta). Incluye validación de tipos de datos y campos requeridos.</em></p>
+</section>
+<section id="schemas-de-tarjetas">
+<h3>Schemas de Tarjetas<a class="headerlink" href="#schemas-de-tarjetas" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_T2.png"><img alt="Schemas de tarjetas" class="align-center" src="_images/fastapi_T2.png" style="width: 80%;" />
+</a>
+<p><em>Imagen T2: Modelos de datos para tarjetas virtuales. Define la estructura de TarjetaCreate/TarjetaSolicitud (para solicitar nuevas tarjetas con campos como id_usuario, numero_tarjeta, tipo_tarjeta, cvv y fecha_expiracion), TarjetaResponse (respuesta del servidor con toda la información incluyendo id_tarjeta, estado y fecha_creacion) y TarjetaUpdate (para actualizar información de la tarjeta). Incluye validación de números de tarjeta, CVV y fechas de expiración.</em></p>
+</section>
+<section id="id1">
+<h3>Schemas de Transacciones<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_TR2.png"><img alt="Schemas de transacciones" class="align-center" src="_images/fastapi_TR2.png" style="width: 80%;" />
+</a>
+<p><em>Imagen TR2: Modelos de datos para transacciones financieras. Define la estructura de TransaccionCreate (para crear nuevas transacciones con campos como id_cuenta, monto, tipo y historial), TransaccionResponse (respuesta del servidor con toda la información incluyendo id_transaccion, id_cuenta, fecha y detalles de la operación) y TransaccionUpdate (para actualizar información de transacciones existentes). Incluye validación de montos, tipos de transacción y referencias a cuentas.</em></p>
+</section>
+<section id="schemas-de-pagos-de-servicios">
+<h3>Schemas de Pagos de Servicios<a class="headerlink" href="#schemas-de-pagos-de-servicios" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_P2.png"><img alt="Schemas de pagos de servicios" class="align-center" src="_images/fastapi_P2.png" style="width: 80%;" />
+</a>
+<p><em>Imagen P2: Modelos de datos para pagos de servicios. Define la estructura de PagoCreate (para crear nuevos pagos con campos como id_usuario, id_cuenta, empresa, referencia_pago, monto, metodo_pago, descripcion y estado), PagoResponse (respuesta del servidor con toda la información incluyendo id_pago, fecha, saldo_anterior, saldo_posterior y referencia_externa) y PagoUpdate (para actualizar estado de pagos). Incluye validación de métodos de pago soportados (cartera, efecty, pse) y estados (pendiente, confirmado).</em></p>
+</section>
+<section id="schemas-de-soportes">
+<h3>Schemas de Soportes<a class="headerlink" href="#schemas-de-soportes" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_SO2.png"><img alt="Schemas de soportes" class="align-center" src="_images/fastapi_SO2.png" style="width: 80%;" />
+</a>
+<p><em>Imagen SO2: Modelos de datos para tickets de soporte. Define la estructura de TicketCreate/SoporteCreate (para crear nuevos tickets con campos como id_usuario, asunto, descripcion y estado), TicketResponse/SoporteResponse (respuesta del servidor con toda la información incluyendo id_ticket, fecha_creacion y estado del ticket) y TicketUpdate/SoporteUpdate (para actualizar información del ticket). Incluye validación de estados (abierto, en proceso, resuelto, cerrado).</em></p>
 </section>
 </section>
 <section id="ejemplo-de-implementacion">
@@ -390,23 +538,509 @@
 </a>
 <p><em>Imagen 19: Endpoint para realizar transferencias de dinero entre usuarios. Valida saldo suficiente, actualiza los saldos de ambos usuarios automáticamente y registra la transacción con todos sus detalles (fecha, hora, monto, tipo, categoría). Genera notificaciones para ambas partes.</em></p>
 </section>
-<section id="crear-solicitud">
-<h3>Crear Solicitud<a class="headerlink" href="#crear-solicitud" title="Link to this heading">¶</a></h3>
-<a class="reference internal image-reference" href="_images/fastapi_20.jpg"><img alt="Endpoint crear solicitud" class="align-center" src="_images/fastapi_20.jpg" style="width: 100%;" />
+<section id="crear-solicitud-de-dinero">
+<h3>Crear Solicitud de Dinero<a class="headerlink" href="#crear-solicitud-de-dinero" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_SD3.png"><img alt="Endpoint crear solicitud" class="align-center" src="_images/fastapi_SD3.png" style="width: 100%;" />
 </a>
-<p><em>Imagen 20: Endpoint para solicitar dinero a otros usuarios. El destinatario recibirá una notificación y podrá aceptar o rechazar la solicitud. Si se acepta, se genera automáticamente una transacción. Incluye monto solicitado, descripción opcional y estado de la solicitud.</em></p>
+<p><em>Imagen SD3: Endpoint POST /solicitudes/crear para crear una nueva solicitud de dinero. El usuario actual solicita dinero a otro usuario. Requiere autenticación y acepta un request body con id_usuario_destinatario (ID del usuario al que se le solicita) y monto (cantidad solicitada). Genera automáticamente una notificación al destinatario y retorna un objeto con los IDs adicionales.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/solicitudes/crear&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;id_usuario_destinatario&quot;: 0,</span>
+<span class="s1">    &quot;monto&quot;: 0,</span>
+<span class="s1">    &quot;mensaje&quot;: &quot;string&quot;</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
 </section>
-<section id="listar-notificaciones">
-<h3>Listar Notificaciones<a class="headerlink" href="#listar-notificaciones" title="Link to this heading">¶</a></h3>
-<a class="reference internal image-reference" href="_images/fastapi_21.jpg"><img alt="Endpoint listar notificaciones" class="align-center" src="_images/fastapi_21.jpg" style="width: 100%;" />
+<section id="obtener-mis-solicitudes">
+<h3>Obtener Mis Solicitudes<a class="headerlink" href="#obtener-mis-solicitudes" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_SD4.png"><img alt="Endpoint obtener mis solicitudes" class="align-center" src="_images/fastapi_SD4.png" style="width: 100%;" />
 </a>
-<p><em>Imagen 21: Endpoint GET para obtener todas las notificaciones del usuario autenticado. Permite filtrar por leídas/no leídas y ordenar por fecha. Incluye paginación para manejar grandes volúmenes de notificaciones eficientemente.</em></p>
+<p><em>Imagen SD4: Endpoint GET /solicitudes/mis-solicitudes que retorna todas las solicitudes de dinero creadas por el usuario autenticado (donde el usuario es el solicitante). No requiere parámetros. Muestra el historial completo con información del destinatario, monto, estado, fechas de creación y respuesta, nombres completos y correo.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/solicitudes/mis-solicitudes&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="obtener-solicitudes-recibidas">
+<h3>Obtener Solicitudes Recibidas<a class="headerlink" href="#obtener-solicitudes-recibidas" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_SD5.png"><img alt="Endpoint obtener solicitudes recibidas" class="align-center" src="_images/fastapi_SD5.png" style="width: 100%;" />
+</a>
+<p><em>Imagen SD5: Endpoint GET /solicitudes/recibidas que retorna solo las solicitudes pendientes donde el usuario autenticado es el destinatario (las que debe aprobar/rechazar). No requiere parámetros. Filtra automáticamente solo solicitudes en estado pendiente que requieren acción del usuario.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/solicitudes/recibidas&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="aceptar-solicitud">
+<h3>Aceptar Solicitud<a class="headerlink" href="#aceptar-solicitud" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_static/fastapi_SD6.png"><img alt="Endpoint aceptar solicitud" class="align-center" src="_static/fastapi_SD6.png" style="width: 100%;" />
+</a>
+<p><em>Imagen SD6: Endpoint POST /solicitudes/{id_solicitud}/aceptar para aceptar una solicitud de dinero y realizar la transferencia. Solo el destinatario puede aceptarla. Requiere el ID de la solicitud como parámetro de ruta. Valida saldo suficiente, realiza la transferencia automáticamente, actualiza el estado a «aceptada» y genera notificaciones.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/solicitudes/1/aceptar&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="rechazar-solicitud">
+<h3>Rechazar Solicitud<a class="headerlink" href="#rechazar-solicitud" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_static/fastapi_SD7.png"><img alt="Endpoint rechazar solicitud" class="align-center" src="_static/fastapi_SD7.png" style="width: 100%;" />
+</a>
+<p><em>Imagen SD7: Endpoint POST /solicitudes/{id_solicitud}/rechazar para rechazar una solicitud de dinero. Solo el destinatario puede rechazarla. Requiere el ID de la solicitud como parámetro de ruta. Actualiza el estado a «rechazada», registra la fecha de respuesta y notifica al solicitante.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/solicitudes/1/rechazar&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="obtener-mis-notificaciones">
+<h3>Obtener Mis Notificaciones<a class="headerlink" href="#obtener-mis-notificaciones" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_NO3.png"><img alt="Endpoint obtener mis notificaciones" class="align-center" src="_images/fastapi_NO3.png" style="width: 100%;" />
+</a>
+<p><em>Imagen NO3: Endpoint GET /notificaciones/mis-notificaciones que retorna todas las notificaciones del usuario autenticado. Acepta parámetros opcionales: solo_no_leidas (boolean, default: false) para filtrar solo notificaciones no leídas, y limite (integer, default: 50) para paginación. Muestra todas las notificaciones ordenadas por fecha con información completa: título, mensaje, tipo, estado de lectura y fecha de creación.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/notificaciones/mis-notificaciones?solo_no_leidas=false&amp;limite=50&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="contar-notificaciones-no-leidas">
+<h3>Contar Notificaciones No Leídas<a class="headerlink" href="#contar-notificaciones-no-leidas" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_NO4.png"><img alt="Endpoint contar no leídas" class="align-center" src="_images/fastapi_NO4.png" style="width: 100%;" />
+</a>
+<p><em>Imagen NO4: Endpoint GET /notificaciones/no-leidas/count que devuelve el contador de notificaciones no leídas del usuario (para mostrar en badges o iconos de campana). No requiere parámetros. Retorna un valor string con el número total de notificaciones pendientes de leer. Útil para actualizar indicadores en tiempo real.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/notificaciones/no-leidas/count&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="marcar-notificacion-como-leida">
+<h3>Marcar Notificación Como Leída<a class="headerlink" href="#marcar-notificacion-como-leida" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_NO5.png"><img alt="Endpoint marcar como leída" class="align-center" src="_images/fastapi_NO5.png" style="width: 100%;" />
+</a>
+<p><em>Imagen NO5: Endpoint PUT /notificaciones/{id_notificacion}/marcar-leida para marcar una notificación específica como leída. Requiere el ID de la notificación como parámetro de ruta. Actualiza el estado de is_read/leida a true. Retorna mensaje de confirmación. Solo el propietario puede marcar sus notificaciones.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">&quot;http://localhost:8000/notificaciones/1/marcar-leida&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
 </section>
 <section id="gestion-de-categorias">
 <h3>Gestión de Categorías<a class="headerlink" href="#gestion-de-categorias" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/fastapi_22.jpg"><img alt="Endpoint gestión de categorías" class="align-center" src="_images/fastapi_22.jpg" style="width: 100%;" />
 </a>
 <p><em>Imagen 22: Endpoints CRUD completos para categorías de transacciones. Los usuarios pueden crear categorías personalizadas, modificarlas, eliminarlas y listarlas. Cada categoría puede tener nombre, descripción, icono y color para mejor visualización en dashboards y reportes.</em></p>
+</section>
+<section id="registrar-consentimiento">
+<h3>Registrar Consentimiento<a class="headerlink" href="#registrar-consentimiento" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_CO3.png"><img alt="Endpoint registrar consentimiento" class="align-center" src="_images/fastapi_CO3.png" style="width: 100%;" />
+</a>
+<p><em>Imagen CO3: Endpoint POST /consentimientos/registrar para registrar un nuevo consentimiento del usuario (términos, privacidad, datos). Requiere autenticación y acepta un request body con campos tipo (string) y acepto (boolean: true). El sistema registra automáticamente la fecha de aceptación y el user_agent. Útil para cumplimiento legal y trazabilidad.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/consentimientos/registrar&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;tipo&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;acepto&quot;: true</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="obtener-mis-consentimientos">
+<h3>Obtener Mis Consentimientos<a class="headerlink" href="#obtener-mis-consentimientos" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_CO4.png"><img alt="Endpoint obtener mis consentimientos" class="align-center" src="_images/fastapi_CO4.png" style="width: 100%;" />
+</a>
+<p><em>Imagen CO4: Endpoint GET /consentimientos/mis-consentimientos que retorna todos los consentimientos registrados del usuario autenticado. No requiere parámetros. Muestra el historial completo de consentimientos con tipo, estado de aceptación, fecha de aceptación y user_agent utilizado.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/consentimientos/mis-consentimientos&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="verificar-consentimiento">
+<h3>Verificar Consentimiento<a class="headerlink" href="#verificar-consentimiento" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_CO5.png"><img alt="Endpoint verificar consentimiento" class="align-center" src="_images/fastapi_CO5.png" style="width: 100%;" />
+</a>
+<p><em>Imagen CO5: Endpoint GET /consentimientos/verificar/{tipo} para verificar si el usuario ha aceptado un tipo específico de consentimiento. Requiere el tipo como parámetro de ruta. Retorna un valor string indicando si el consentimiento está aceptado. Útil para validaciones antes de procesar datos sensibles.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/consentimientos/verificar/terminos&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="revocar-consentimiento">
+<h3>Revocar Consentimiento<a class="headerlink" href="#revocar-consentimiento" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_CO6.png"><img alt="Endpoint revocar consentimiento" class="align-center" src="_images/fastapi_CO6.png" style="width: 100%;" />
+</a>
+<p><em>Imagen CO6: Endpoint POST /consentimientos/revocar/{tipo} para revocar un consentimiento previamente aceptado (acepto=False). Requiere el tipo como parámetro de ruta. Registra la revocación manteniendo el historial. Permite a los usuarios ejercer su derecho de retractación en cualquier momento.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/consentimientos/revocar/privacidad&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="crear-solicitud-de-eliminacion">
+<h3>Crear Solicitud de Eliminación<a class="headerlink" href="#crear-solicitud-de-eliminacion" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_static/fastapi_SE3.png"><img alt="Endpoint crear solicitud eliminación" class="align-center" src="_static/fastapi_SE3.png" style="width: 100%;" />
+</a>
+<p><em>Imagen SE3: Endpoint POST /usuarios/solicitud-eliminacion para crear una nueva solicitud de eliminación de cuenta (NUEVO SISTEMA). Requiere autenticación y un request body con password (contraseña del usuario), confirmacion (string de confirmación) y razon (motivo de eliminación). Los administradores deben aprobar la solicitud antes de eliminar la cuenta definitivamente.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/usuarios/solicitud-eliminacion&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;password&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;confirmacion&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;razon&quot;: &quot;string&quot;</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="obtener-mis-solicitudes-de-eliminacion">
+<h3>Obtener Mis Solicitudes de Eliminación<a class="headerlink" href="#obtener-mis-solicitudes-de-eliminacion" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_static/fastapi_SE4.png"><img alt="Endpoint obtener mis solicitudes eliminación" class="align-center" src="_static/fastapi_SE4.png" style="width: 100%;" />
+</a>
+<p><em>Imagen SE4: Endpoint GET /usuarios/mis-solicitudes-eliminacion que retorna todas las solicitudes de eliminación del usuario autenticado. No requiere parámetros. Muestra el estado actual de cada solicitud (pendiente/aprobada/rechazada/cancelada), fechas, razón y comentarios del administrador si los hay.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/usuarios/mis-solicitudes-eliminacion&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="cancelar-solicitud-de-eliminacion">
+<h3>Cancelar Solicitud de Eliminación<a class="headerlink" href="#cancelar-solicitud-de-eliminacion" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_static/fastapi_SE5.png"><img alt="Endpoint cancelar solicitud eliminación" class="align-center" src="_static/fastapi_SE5.png" style="width: 100%;" />
+</a>
+<p><em>Imagen SE5: Endpoint DELETE /usuarios/cancelar-solicitud-eliminacion/{id_solicitud} para cancelar una solicitud de eliminación pendiente. Requiere el ID de la solicitud como parámetro de ruta. Solo se pueden cancelar solicitudes en estado pendiente. Retorna mensaje de confirmación.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">&quot;http://localhost:8000/usuarios/cancelar-solicitud-eliminacion/1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="listar-solicitudes-eliminacion-admin">
+<h3>Listar Solicitudes Eliminación Admin<a class="headerlink" href="#listar-solicitudes-eliminacion-admin" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_static/fastapi_SE6.png"><img alt="Endpoint listar solicitudes eliminación admin" class="align-center" src="_static/fastapi_SE6.png" style="width: 100%;" />
+</a>
+<p><em>Imagen SE6: Endpoint GET /usuarios/admin/solicitudes-eliminacion para administradores. Lista todas las solicitudes de eliminación del sistema con opción de filtrar por estado mediante query parameter. Útil para gestionar y revisar solicitudes pendientes de aprobación. Solo accesible por administradores.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/usuarios/admin/solicitudes-eliminacion?estado=pendiente&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="resolver-solicitud-eliminacion-admin">
+<h3>Resolver Solicitud Eliminación Admin<a class="headerlink" href="#resolver-solicitud-eliminacion-admin" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_static/fastapi_SE7.png"><img alt="Endpoint resolver solicitud eliminación admin" class="align-center" src="_static/fastapi_SE7.png" style="width: 100%;" />
+</a>
+<p><em>Imagen SE7: Endpoint PUT /usuarios/admin/solicitudes-eliminacion/{id_solicitud} para aprobar o rechazar solicitudes de eliminación. Requiere el ID de la solicitud y un request body con accion («aprobar»/»rechazar») y comentario opcional del administrador. Al aprobar, se elimina permanentemente la cuenta del usuario. Solo para administradores.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">&quot;http://localhost:8000/usuarios/admin/solicitudes-eliminacion/1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;accion&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;comentario&quot;: &quot;string&quot;</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="estadisticas-eliminaciones-admin">
+<h3>Estadísticas Eliminaciones Admin<a class="headerlink" href="#estadisticas-eliminaciones-admin" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_static/fastapi_SE8.png"><img alt="Endpoint estadísticas eliminaciones admin" class="align-center" src="_static/fastapi_SE8.png" style="width: 100%;" />
+</a>
+<p><em>Imagen SE8: Endpoint GET /usuarios/admin/estadisticas-eliminaciones para obtener estadísticas del sistema de eliminaciones. No requiere parámetros. Retorna métricas como total de solicitudes por estado, razones más comunes, tendencias temporales y tiempo promedio de resolución. Solo para administradores.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/usuarios/admin/estadisticas-eliminaciones&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="crear-cuenta">
+<h3>Crear Cuenta<a class="headerlink" href="#crear-cuenta" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_C3.png"><img alt="Endpoint crear cuenta" class="align-center" src="_images/fastapi_C3.png" style="width: 100%;" />
+</a>
+<p><em>Imagen C3: Endpoint POST /cuentas/ para registrar una nueva cuenta bancaria. Requiere autenticación y acepta un request body con los campos numero_cuenta (string), saldo (number), moneda (string) y tipo_cuenta (string). El id_usuario se asigna automáticamente del usuario autenticado. Retorna código 200 con los datos de la cuenta creada o 422 en caso de error de validación.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/cuentas/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;numero_cuenta&quot;: &quot;1234567890&quot;,</span>
+<span class="s1">    &quot;saldo&quot;: 0,</span>
+<span class="s1">    &quot;moneda&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;tipo_cuenta&quot;: &quot;ahorros&quot;,</span>
+<span class="s1">    &quot;id_usuario&quot;: 0</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="obtener-mis-cuentas">
+<h3>Obtener Mis Cuentas<a class="headerlink" href="#obtener-mis-cuentas" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_C4.png"><img alt="Endpoint obtener mis cuentas" class="align-center" src="_images/fastapi_C4.png" style="width: 100%;" />
+</a>
+<p><em>Imagen C4: Endpoint GET /cuentas/mis-cuentas que retorna todas las cuentas bancarias del usuario autenticado. No requiere parámetros adicionales, solo el token JWT. Útil para mostrar el portafolio completo de cuentas del usuario con sus saldos actuales, números de cuenta y tipos.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/cuentas/mis-cuentas&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="actualizar-cuenta">
+<h3>Actualizar Cuenta<a class="headerlink" href="#actualizar-cuenta" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_C5.png"><img alt="Endpoint actualizar cuenta" class="align-center" src="_images/fastapi_C5.png" style="width: 100%;" />
+</a>
+<p><em>Imagen C5: Endpoint PUT /cuentas/{cuenta_id} para modificar información de una cuenta existente. Requiere el ID de la cuenta como parámetro de ruta y acepta un request body con los campos a actualizar: numero_cuenta, saldo, moneda y tipo_cuenta. Solo el propietario de la cuenta puede realizar modificaciones.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">&quot;http://localhost:8000/cuentas/1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;numero_cuenta&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;saldo&quot;: 0,</span>
+<span class="s1">    &quot;moneda&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;tipo_cuenta&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;id_usuario&quot;: 0</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="eliminar-cuenta">
+<h3>Eliminar Cuenta<a class="headerlink" href="#eliminar-cuenta" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_C6.png"><img alt="Endpoint eliminar cuenta" class="align-center" src="_images/fastapi_C6.png" style="width: 100%;" />
+</a>
+<p><em>Imagen C6: Endpoint DELETE /cuentas/{cuenta_id} para eliminar una cuenta bancaria del sistema. Requiere el ID de la cuenta como parámetro de ruta. Retorna un mensaje de confirmación en formato string. Solo permite eliminar cuentas propias del usuario autenticado.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">&quot;http://localhost:8000/cuentas/1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="agregar-saldo">
+<h3>Agregar Saldo<a class="headerlink" href="#agregar-saldo" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_C7.png"><img alt="Endpoint agregar saldo" class="align-center" src="_images/fastapi_C7.png" style="width: 100%;" />
+</a>
+<p><em>Imagen C7: Endpoint POST /cuentas/{cuenta_id}/agregar-saldo para depositar o recargar saldo a una cuenta específica. Requiere el ID de la cuenta como parámetro de ruta y un monto en el request body. Esta operación simula un depósito o recarga y registra el movimiento en el historial de la cuenta.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/cuentas/1/agregar-saldo&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;monto&quot;: 0</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="obtener-todos-mis-movimientos">
+<h3>Obtener Todos Mis Movimientos<a class="headerlink" href="#obtener-todos-mis-movimientos" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_C8.png"><img alt="Endpoint obtener todos mis movimientos" class="align-center" src="_images/fastapi_C8.png" style="width: 100%;" />
+</a>
+<p><em>Imagen C8: Endpoint GET /cuentas/mis-movimientos que retorna el historial completo de todos los movimientos (depósitos/recargas) de todas las cuentas del usuario autenticado. Útil para tener una vista consolidada de todas las operaciones realizadas en las diferentes cuentas.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/cuentas/mis-movimientos&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="obtener-movimientos-de-cuenta">
+<h3>Obtener Movimientos de Cuenta<a class="headerlink" href="#obtener-movimientos-de-cuenta" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_C9.png"><img alt="Endpoint obtener movimientos de cuenta" class="align-center" src="_images/fastapi_C9.png" style="width: 100%;" />
+</a>
+<p><em>Imagen C9: Endpoint GET /cuentas/{cuenta_id}/movimientos que obtiene el historial de movimientos específico de una cuenta en particular. Requiere el ID de la cuenta como parámetro de ruta. Muestra todas las operaciones de depósito/recarga realizadas en esa cuenta con detalles como monto, tipo, fecha y descripción.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/cuentas/1/movimientos&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="solicitar-tarjeta">
+<h3>Solicitar Tarjeta<a class="headerlink" href="#solicitar-tarjeta" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_T3.png"><img alt="Endpoint solicitar tarjeta" class="align-center" src="_images/fastapi_T3.png" style="width: 100%;" />
+</a>
+<p><em>Imagen T3: Endpoint POST /tarjetas/solicitar para solicitar una nueva tarjeta virtual. Requiere autenticación y acepta un request body con el campo tipo_tarjeta (tipo de tarjeta: «Virtual» u otro). El sistema genera automáticamente el número de tarjeta, CVV, fecha de expiración y asigna el id_usuario del usuario autenticado. Retorna código 200 con los datos de la tarjeta creada.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/tarjetas/solicitar&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;tipo_tarjeta&quot;: &quot;Virtual&quot;</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="obtener-mis-tarjetas">
+<h3>Obtener Mis Tarjetas<a class="headerlink" href="#obtener-mis-tarjetas" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_T4.png"><img alt="Endpoint obtener mis tarjetas" class="align-center" src="_images/fastapi_T4.png" style="width: 100%;" />
+</a>
+<p><em>Imagen T4: Endpoint GET /tarjetas/mis que retorna todas las tarjetas virtuales del usuario autenticado. No requiere parámetros adicionales, solo el token JWT. Muestra información completa de cada tarjeta incluyendo número, tipo, CVV, fecha de expiración y estado (activa/bloqueada). Útil para mostrar el portafolio completo de tarjetas del usuario.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/tarjetas/mis&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="bloquear-desbloquear-tarjeta">
+<h3>Bloquear/Desbloquear Tarjeta<a class="headerlink" href="#bloquear-desbloquear-tarjeta" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_T5.png"><img alt="Endpoint bloquear tarjeta" class="align-center" src="_images/fastapi_T5.png" style="width: 100%;" />
+</a>
+<p><em>Imagen T5: Endpoint PUT /tarjetas/{tarjeta_id}/bloquear para cambiar el estado de una tarjeta (alternar entre activa/bloqueada). Requiere el ID de la tarjeta como parámetro de ruta. Permite a los usuarios bloquear temporalmente sus tarjetas por seguridad y desbloquearlas cuando lo necesiten. Solo el propietario de la tarjeta puede cambiar su estado.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">&quot;http://localhost:8000/tarjetas/1/bloquear&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="eliminar-tarjeta">
+<h3>Eliminar Tarjeta<a class="headerlink" href="#eliminar-tarjeta" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_T6.png"><img alt="Endpoint eliminar tarjeta" class="align-center" src="_images/fastapi_T6.png" style="width: 100%;" />
+</a>
+<p><em>Imagen T6: Endpoint DELETE /tarjetas/{tarjeta_id} para eliminar permanentemente una tarjeta virtual del sistema. Requiere el ID de la tarjeta como parámetro de ruta. Retorna un mensaje de confirmación en formato string. Solo permite eliminar tarjetas propias del usuario autenticado.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">&quot;http://localhost:8000/tarjetas/1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="obtener-tarjeta">
+<h3>Obtener Tarjeta<a class="headerlink" href="#obtener-tarjeta" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_T7.png"><img alt="Endpoint obtener tarjeta" class="align-center" src="_images/fastapi_T7.png" style="width: 100%;" />
+</a>
+<p><em>Imagen T7: Endpoint GET /tarjetas/{tarjeta_id} para consultar los detalles completos de una tarjeta específica. Requiere el ID de la tarjeta como parámetro de ruta. Retorna toda la información de la tarjeta incluyendo número, tipo, CVV, fecha de expiración, estado y datos del usuario propietario. Solo el propietario puede consultar los detalles completos de su tarjeta.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/tarjetas/1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>Crear Transacción<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_TR3.png"><img alt="Endpoint crear transacción" class="align-center" src="_images/fastapi_TR3.png" style="width: 100%;" />
+</a>
+<p><em>Imagen TR3: Endpoint POST /transacciones/ para crear una nueva transacción. Requiere autenticación y acepta un request body con los campos id_cuenta (ID de la cuenta), monto (cantidad de la transacción), tipo (tipo de transacción: «Depósito», «Retiro», etc.) y historial (descripción o referencia). El sistema registra automáticamente la fecha y hora de la transacción.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/transacciones/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;id_cuenta&quot;: 0,</span>
+<span class="s1">    &quot;monto&quot;: 0,</span>
+<span class="s1">    &quot;tipo&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;historial&quot;: &quot;string&quot;</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="listar-mis-transacciones">
+<h3>Listar Mis Transacciones<a class="headerlink" href="#listar-mis-transacciones" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_TR4.png"><img alt="Endpoint listar mis transacciones" class="align-center" src="_images/fastapi_TR4.png" style="width: 100%;" />
+</a>
+<p><em>Imagen TR4: Endpoint GET /transacciones/mis que retorna todas las transacciones del usuario autenticado ordenadas por fecha (más recientes primero). No requiere parámetros adicionales, solo el token JWT. Muestra el historial completo de movimientos incluyendo depósitos, retiros y transferencias con detalles de monto, tipo, cuenta asociada y fecha.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/transacciones/mis&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="listar-transacciones-de-usuario">
+<h3>Listar Transacciones de Usuario<a class="headerlink" href="#listar-transacciones-de-usuario" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_TR5.png"><img alt="Endpoint listar transacciones de usuario" class="align-center" src="_images/fastapi_TR5.png" style="width: 100%;" />
+</a>
+<p><em>Imagen TR5: Endpoint GET /transacciones/usuario/{usuario_id} para obtener todas las transacciones de un usuario específico. Requiere el ID del usuario como parámetro de ruta. Útil para administradores que necesitan auditar o revisar el historial financiero de usuarios específicos. Solo accesible por usuarios con permisos de administración.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/transacciones/usuario/1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="obtener-transaccion">
+<h3>Obtener Transacción<a class="headerlink" href="#obtener-transaccion" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_TR6.png"><img alt="Endpoint obtener transacción" class="align-center" src="_images/fastapi_TR6.png" style="width: 100%;" />
+</a>
+<p><em>Imagen TR6: Endpoint GET /transacciones/{transaccion_id} para consultar los detalles completos de una transacción específica. Requiere el ID de la transacción como parámetro de ruta. Retorna toda la información incluyendo monto, tipo, cuenta asociada, historial/descripción y fecha de la operación. Solo el propietario o administradores pueden consultar los detalles.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/transacciones/1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="actualizar-transaccion">
+<h3>Actualizar Transacción<a class="headerlink" href="#actualizar-transaccion" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_TR7.png"><img alt="Endpoint actualizar transacción" class="align-center" src="_images/fastapi_TR7.png" style="width: 100%;" />
+</a>
+<p><em>Imagen TR7: Endpoint PUT /transacciones/{transaccion_id} para modificar información de una transacción existente. Requiere el ID de la transacción como parámetro de ruta y acepta un request body con los campos a actualizar: id_cuenta, monto, tipo e historial. Útil para correcciones o actualizaciones de registros.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">&quot;http://localhost:8000/transacciones/1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;id_cuenta&quot;: 0,</span>
+<span class="s1">    &quot;monto&quot;: 0,</span>
+<span class="s1">    &quot;tipo&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;historial&quot;: &quot;string&quot;</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="crear-pago-de-servicio">
+<h3>Crear Pago de Servicio<a class="headerlink" href="#crear-pago-de-servicio" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_P3.png"><img alt="Endpoint crear pago servicio" class="align-center" src="_images/fastapi_P3.png" style="width: 100%;" />
+</a>
+<p><em>Imagen P3: Endpoint POST /pagos/ para crear un nuevo pago de servicio con descuento automático de cartera. Requiere autenticación y acepta un request body con campos como id_usuario, id_cuenta, empresa (nombre del servicio), referencia_pago (número de referencia), monto, metodo_pago (cartera/efecty/pse), descripción y estado (pendiente por defecto). El sistema valida saldo, descuenta automáticamente de la cartera y genera referencias para pagos externos.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/pagos/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;id_usuario&quot;: 0,</span>
+<span class="s1">    &quot;id_cuenta&quot;: 0,</span>
+<span class="s1">    &quot;empresa&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;referencia_pago&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;monto&quot;: 0,</span>
+<span class="s1">    &quot;metodo_pago&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;descripcion&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;estado&quot;: &quot;pendiente&quot;</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="listar-pagos-del-usuario">
+<h3>Listar Pagos del Usuario<a class="headerlink" href="#listar-pagos-del-usuario" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_P4.png"><img alt="Endpoint listar pagos usuario" class="align-center" src="_images/fastapi_P4.png" style="width: 100%;" />
+</a>
+<p><em>Imagen P4: Endpoint GET /pagos/ que retorna todos los pagos de servicios del usuario autenticado. No requiere parámetros adicionales. Muestra el historial completo de pagos con información detallada: empresa, referencia, monto, método de pago, descripción, estado, fecha, saldo anterior y posterior, y referencia externa. Ideal para seguimiento y control de gastos en servicios.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/pagos/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="obtener-metodos-de-pago">
+<h3>Obtener Métodos de Pago<a class="headerlink" href="#obtener-metodos-de-pago" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_P5.png"><img alt="Endpoint obtener métodos de pago" class="align-center" src="_images/fastapi_P5.png" style="width: 100%;" />
+</a>
+<p><em>Imagen P5: Endpoint GET /pagos/metodos-pago que retorna la lista de métodos de pago disponibles en el sistema. No requiere parámetros. Devuelve los métodos soportados como «cartera» (pago directo desde saldo), «efecty» (pago en efectivo) y «pse» (pago electrónico bancario). Útil para mostrar opciones al usuario en la interfaz de pago.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/pagos/metodos-pago&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="obtener-detalle-de-pago">
+<h3>Obtener Detalle de Pago<a class="headerlink" href="#obtener-detalle-de-pago" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_P6.png"><img alt="Endpoint obtener pago detalle" class="align-center" src="_images/fastapi_P6.png" style="width: 100%;" />
+</a>
+<p><em>Imagen P6: Endpoint GET /pagos/{pago_id} para consultar los detalles completos de un pago específico. Requiere el ID del pago como parámetro de ruta. Retorna toda la información del pago incluyendo empresa, referencia, monto, método, descripción, estado, fecha, saldos y referencia externa. Solo el propietario puede consultar sus pagos.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/pagos/1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="crear-ticket-de-soporte">
+<h3>Crear Ticket de Soporte<a class="headerlink" href="#crear-ticket-de-soporte" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_SO3.png"><img alt="Endpoint crear ticket" class="align-center" src="_images/fastapi_SO3.png" style="width: 100%;" />
+</a>
+<p><em>Imagen SO3: Endpoint POST /soportes/ para crear un nuevo ticket de soporte técnico o consulta. Requiere autenticación y acepta un request body con campos como id_usuario, asunto (título del ticket), descripcion (detalle del problema o consulta) y estado (por defecto «string» o abierto). Genera automáticamente un ID de ticket y fecha de creación para seguimiento.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/soportes/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;id_usuario&quot;: 0,</span>
+<span class="s1">    &quot;asunto&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;descripcion&quot;: &quot;string&quot;,</span>
+<span class="s1">    &quot;estado&quot;: &quot;string&quot;</span>
+<span class="s1">  }&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="listar-tickets">
+<h3>Listar Tickets<a class="headerlink" href="#listar-tickets" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_SO4.png"><img alt="Endpoint listar tickets" class="align-center" src="_images/fastapi_SO4.png" style="width: 100%;" />
+</a>
+<p><em>Imagen SO4: Endpoint GET /soportes/ que retorna todos los tickets de soporte del usuario autenticado. No requiere parámetros adicionales. Muestra el historial completo de tickets con información como ID, asunto, descripción, estado (abierto/en proceso/resuelto/cerrado), fecha de creación y datos del usuario. Útil para seguimiento de consultas y problemas reportados.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/soportes/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="obtener-ticket">
+<h3>Obtener Ticket<a class="headerlink" href="#obtener-ticket" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/fastapi_SO5.png"><img alt="Endpoint obtener ticket" class="align-center" src="_images/fastapi_SO5.png" style="width: 100%;" />
+</a>
+<p><em>Imagen SO5: Endpoint GET /soportes/{ticket_id} para consultar los detalles completos de un ticket específico. Requiere el ID del ticket como parámetro de ruta. Retorna toda la información del ticket incluyendo asunto, descripción detallada, estado actual, fecha de creación y datos del usuario solicitante. Solo el propietario del ticket puede consultar sus detalles.</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8000/soportes/1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {tu_token_jwt}&quot;</span>
+</pre></div>
+</div>
 </section>
 <section id="javascript-fetch-api">
 <h3>JavaScript (Fetch API)<a class="headerlink" href="#javascript-fetch-api" title="Link to this heading">¶</a></h3>

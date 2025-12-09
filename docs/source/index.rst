@@ -9,361 +9,404 @@ BillCash - Documentación del Sistema
    <div style="margin-bottom: 20px;">
       <img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version 1.0.0" style="margin-right: 10px;">
       <img src="https://img.shields.io/badge/status-en%20desarrollo-yellow.svg" alt="En Desarrollo">
+      <img src="https://img.shields.io/badge/Python-3.9+-blue.svg" alt="Python 3.9+">
+      <img src="https://img.shields.io/badge/FastAPI-0.100+-green.svg" alt="FastAPI">
    </div>
 
 Bienvenido a la Documentación de BillCash
 ==========================================
 
-**BillCash** es un sistema integral de gestión de pagos y facturación diseñado para facilitar el control financiero, procesamiento de transacciones y generación de reportes para empresas de todos los tamaños.
+**BillCash** es una billetera digital moderna que permite realizar transacciones de dinero de forma segura, 
+rápida y eficiente. Desarrollada con FastAPI y tecnologías modernas, BillCash ofrece una experiencia 
+completa para la gestión de pagos digitales entre usuarios.
 
 .. note::
-   Esta documentación describe los requisitos funcionales del sistema BillCash v1.0.0
+   Esta documentación cubre la versión 1.0.0 del sistema BillCash
 
-Descripción General del Proyecto
-=================================
+¿Qué es BillCash?
+=================
 
-BillCash es una plataforma que permite:
+BillCash es una plataforma de billetera digital que permite:
 
-* Gestión completa de facturas y pagos
-* Procesamiento de transacciones en tiempo real
-* Generación de reportes financieros
-* Administración de clientes y proveedores
-* Integración con múltiples métodos de pago
-* Automatización de procesos de cobro
+💰 **Gestión de Dinero**
+   * Enviar y recibir dinero entre usuarios
+   * Solicitar dinero a otros usuarios
+   * Gestión de saldo en tiempo real
+   * Historial completo de transacciones
 
-Documentación de la API REST
-=============================
+💳 **Gestión de Tarjetas**
+   * Vinculación de tarjetas de débito/crédito
+   * Múltiples tarjetas por cuenta
+   * Tarjetas predeterminadas para pagos rápidos
+
+🏦 **Cuentas Bancarias**
+   * Conexión con cuentas bancarias
+   * Transferencias directas
+   * Retiros y depósitos
+
+🔒 **Seguridad**
+   * Autenticación JWT
+   * Encriptación de datos sensibles
+   * Verificación de identidad
+   * Auditoría de transacciones
+
+📊 **Reportes y Análisis**
+   * Dashboard con estadísticas
+   * Histórico de movimientos
+   * Exportación de datos
+
+Arquitectura del Sistema
+=========================
+
+BillCash está construido con una arquitectura moderna:
+
+* **Backend:** FastAPI (Python) - API REST
+* **Base de Datos:** PostgreSQL/MySQL
+* **Autenticación:** JWT (JSON Web Tokens)
+* **Frontend:** React/Vue.js (aplicación web y móvil)
+* **Hosting:** Cloud (Azure/AWS)
+
+Índice de Documentación
+========================
 
 .. toctree::
    :maxdepth: 2
-   :caption: API Endpoints
+   :caption: 📱 Manual de Usuario
+
+   manual_index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 🔧 API REST - Documentación Técnica
 
    api_dashboard
 
-Requisitos Funcionales
+.. toctree::
+   :maxdepth: 2
+   :caption: 📋 Casos de Uso
+
+   casos_uso
+
+Características Principales
+============================
+
+1. 💰 Transacciones de Dinero
+------------------------------
+
+**Enviar Dinero**
+~~~~~~~~~~~~~~~~~
+Los usuarios pueden enviar dinero a otros usuarios de BillCash de forma instantánea:
+
+* Búsqueda de destinatarios por nombre de usuario o correo
+* Selección de monto a enviar
+* Agregar nota o concepto de pago
+* Confirmación con verificación de seguridad
+* Notificación en tiempo real al destinatario
+
+**Solicitar Dinero**
+~~~~~~~~~~~~~~~~~~~~
+Funcionalidad para solicitar pagos a otros usuarios:
+
+* Crear solicitud con monto específico
+* Agregar descripción del motivo
+* Enviar solicitud a uno o varios usuarios
+* Seguimiento de solicitudes enviadas y recibidas
+* Aceptar o rechazar solicitudes recibidas
+
+**Historial de Transacciones**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Vista completa de todas las transacciones
+* Filtros por tipo (enviadas, recibidas, solicitudes)
+* Filtros por fecha y monto
+* Exportación de historial
+* Detalles completos de cada transacción
+
+2. 💳 Gestión de Tarjetas
+--------------------------
+
+**Vinculación de Tarjetas**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Agregar tarjetas de débito y crédito
+* Validación de datos de tarjeta
+* Encriptación de información sensible
+* Soporte para múltiples emisores
+
+**Administración de Tarjetas**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Ver todas las tarjetas vinculadas
+* Establecer tarjeta predeterminada
+* Eliminar tarjetas
+* Actualizar información de vencimiento
+
+3. 🏦 Cuentas Bancarias
+------------------------
+
+**Gestión de Cuentas**
+~~~~~~~~~~~~~~~~~~~~~~
+* Vincular cuentas bancarias
+* Ver saldo disponible
+* Historial de movimientos
+* Transferencias entre cuentas
+* Retiros y depósitos
+
+**Seguridad Bancaria**
+~~~~~~~~~~~~~~~~~~~~~~
+* Verificación de titular
+* Validación de CLABE/número de cuenta
+* Límites de transacción configurables
+* Alertas de movimientos
+
+4. 👤 Gestión de Usuarios
+--------------------------
+
+**Registro y Autenticación**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+El sistema implementa un proceso seguro de registro:
+
+* Registro con nombre, email y contraseña
+* Validación de correo electrónico
+* Autenticación JWT
+* Recuperación de contraseña
+* Cierre de sesión seguro
+
+**Perfil de Usuario**
+~~~~~~~~~~~~~~~~~~~~~
+Cada usuario puede gestionar su información:
+
+* Editar datos personales
+* Cambiar contraseña
+* Configurar foto de perfil
+* Preferencias de notificaciones
+* Configuración de privacidad
+
+5. 🔔 Notificaciones
+--------------------
+
+**Notificaciones en Tiempo Real**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Dinero recibido
+* Solicitudes de dinero
+* Confirmaciones de pago
+* Alertas de seguridad
+* Actualizaciones del sistema
+
+**Configuración de Notificaciones**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Activar/desactivar por tipo
+* Notificaciones push (móvil)
+* Notificaciones email
+* Notificaciones en app
+
+6. 🔒 Seguridad y Privacidad
+-----------------------------
+
+**Seguridad del Sistema**
+~~~~~~~~~~~~~~~~~~~~~~~~~
+BillCash implementa múltiples capas de seguridad:
+
+* Encriptación end-to-end
+* Tokens JWT con expiración
+* Hashing de contraseñas (bcrypt)
+* Validación de sesiones
+* Protección contra CSRF
+* Rate limiting en endpoints
+* Logs de auditoría
+
+**Protección de Datos**
+~~~~~~~~~~~~~~~~~~~~~~~
+* Cumplimiento con GDPR
+* Datos sensibles encriptados
+* Solicitud de eliminación de cuenta
+* Exportación de datos personales
+* Políticas de privacidad claras
+
+7. 📊 Dashboard y Estadísticas
+-------------------------------
+
+**Panel de Control**
+~~~~~~~~~~~~~~~~~~~~
+Vista general del estado de la cuenta:
+
+* Saldo disponible
+* Transacciones recientes
+* Solicitudes pendientes
+* Gráficos de gastos/ingresos
+* Resumen mensual
+
+**Reportes**
+~~~~~~~~~~~~
+* Reportes de movimientos
+* Análisis de gastos por categoría
+* Comparativas mensuales
+* Exportación a PDF/Excel
+
+Tecnologías Utilizadas
 =======================
 
-1. Gestión de Usuarios
------------------------
+Backend - FastAPI
+-----------------
 
-RF-001: Registro de Usuarios
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-El sistema debe permitir el registro de nuevos usuarios con los siguientes datos:
-
-* Nombre completo
-* Correo electrónico (único)
-* Contraseña (mínimo 8 caracteres, con requisitos de seguridad)
-* Número de teléfono
-* Tipo de usuario (Administrador, Usuario, Cliente)
-
-**Criterios de aceptación:**
-
-- La contraseña debe contener al menos una mayúscula, una minúscula y un número
-- El correo debe ser validado mediante un enlace de confirmación
-- Los datos sensibles deben almacenarse encriptados
-
-RF-002: Autenticación y Autorización
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-El sistema debe implementar:
-
-* Login con correo electrónico y contraseña
-* Recuperación de contraseña mediante correo electrónico
-* Sistema de roles y permisos
-* Sesiones seguras con tokens JWT
-* Cierre de sesión automático después de 30 minutos de inactividad
-
-RF-003: Gestión de Perfiles
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Los usuarios deben poder:
-
-* Ver y editar su información personal
-* Cambiar su contraseña
-* Configurar preferencias de notificaciones
-* Ver historial de actividad
-
-2. Gestión de Facturas
------------------------
-
-RF-004: Creación de Facturas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-El sistema debe permitir crear facturas con:
-
-* Número de factura auto-incremental
-* Fecha de emisión y vencimiento
-* Datos del cliente (nombre, dirección, RFC/NIT)
-* Lista de productos/servicios con:
-  
-  - Descripción
-  - Cantidad
-  - Precio unitario
-  - Subtotal
-
-* Cálculo automático de impuestos (IVA, ISR)
-* Total a pagar
-* Notas adicionales
-
-**Ejemplo de estructura:**
+**Framework Principal**
+~~~~~~~~~~~~~~~~~~~~~~~
+BillCash utiliza FastAPI como framework principal para la API REST:
 
 .. code-block:: python
 
-   class Factura:
-       def __init__(self, cliente, items):
-           self.numero = self.generar_numero()
-           self.fecha_emision = datetime.now()
-           self.cliente = cliente
-           self.items = items
-           self.subtotal = self.calcular_subtotal()
-           self.impuestos = self.calcular_impuestos()
-           self.total = self.subtotal + self.impuestos
+   from fastapi import FastAPI, HTTPException, Depends
+   from fastapi.security import HTTPBearer
+   
+   app = FastAPI(
+       title="BillCash API",
+       description="API REST para billetera digital",
+       version="1.0.0"
+   )
+   
+   security = HTTPBearer()
+   
+   @app.get("/api/usuarios/me")
+   async def obtener_usuario_actual(token: str = Depends(security)):
+       """Obtiene información del usuario autenticado"""
+       return {"usuario": "info"}
 
-RF-005: Consulta de Facturas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Características de FastAPI**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Validación automática con Pydantic
+* Documentación interactiva (Swagger/OpenAPI)
+* Async/await para alto rendimiento
+* Type hints de Python
+* Inyección de dependencias
+* Manejo robusto de errores
 
-Los usuarios deben poder:
+Base de Datos
+-------------
 
-* Listar todas las facturas con filtros por:
-  
-  - Estado (pendiente, pagada, vencida, cancelada)
-  - Fecha (rango)
-  - Cliente
-  - Monto
+**PostgreSQL/MySQL**
+~~~~~~~~~~~~~~~~~~~~
+* Almacenamiento relacional
+* Transacciones ACID
+* Índices optimizados
+* Backup automático
+* Replicación
 
-* Ver detalle completo de cada factura
-* Buscar facturas por número o nombre de cliente
-
-RF-006: Edición y Cancelación de Facturas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-El sistema debe permitir:
-
-* Editar facturas en estado "borrador"
-* Cancelar facturas con motivo justificado
-* Generar notas de crédito para facturas canceladas
-* Mantener historial de cambios
-
-RF-007: Exportación de Facturas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Las facturas deben poder exportarse en:
-
-* PDF con formato profesional
-* XML para cumplimiento fiscal (CFDI, formato SAT)
-* Excel para análisis de datos
-* Envío automático por correo electrónico
-
-3. Gestión de Pagos
---------------------
-
-RF-008: Registro de Pagos
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-El sistema debe permitir registrar pagos con:
-
-* Monto del pago
-* Método de pago:
-  
-  - Transferencia bancaria
-  - Tarjeta de crédito/débito
-  - PayPal
-  - Efectivo
-  - Cheque
-
-* Fecha del pago
-* Referencia bancaria o número de transacción
-* Factura(s) asociada(s)
-* Aplicación automática de pagos a facturas pendientes
-
-RF-009: Procesamiento de Pagos en Línea
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-El sistema debe integrar pasarelas de pago para:
-
-* Procesar pagos con tarjeta en tiempo real
-* Validar transacciones
-* Generar comprobantes automáticos
-* Manejar rechazos y reintentos
-* Cumplir con estándares PCI-DSS
-
-RF-010: Conciliación Bancaria
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Funcionalidades de conciliación:
-
-* Importar extractos bancarios (CSV, Excel)
-* Comparar movimientos bancarios con pagos registrados
-* Identificar discrepancias
-* Generar reportes de conciliación
-* Marcar pagos como conciliados
-
-4. Gestión de Clientes
------------------------
-
-RF-011: Registro de Clientes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-El sistema debe mantener un catálogo de clientes con:
-
-* Datos generales (nombre, dirección, teléfono, email)
-* Datos fiscales (RFC/NIT, régimen fiscal)
-* Límite de crédito
-* Días de crédito
-* Contactos adicionales
-* Notas y observaciones
-
-RF-012: Historial del Cliente
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Para cada cliente se debe mostrar:
-
-* Lista de facturas generadas
-* Historial de pagos
-* Saldo pendiente
-* Estado de cuenta actual
-* Antigüedad de saldos (30, 60, 90+ días)
-
-5. Reportes y Análisis
-----------------------
-
-RF-013: Reportes Financieros
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-El sistema debe generar:
-
-**Reportes de Ventas:**
-
-* Ventas por período (diario, semanal, mensual, anual)
-* Ventas por producto/servicio
-* Ventas por cliente
-* Comparativas entre períodos
-
-**Reportes de Cobranza:**
-
-* Cuentas por cobrar
-* Antigüedad de saldos
-* Proyección de flujo de efectivo
-* Tasa de morosidad
-
-**Reportes Fiscales:**
-
-* Declaraciones de IVA
-* Resumen de ingresos
-* Retenciones
-
-RF-014: Dashboard Ejecutivo
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Panel de control con métricas clave:
-
-* Ingresos del mes actual vs mes anterior
-* Total de facturas pendientes
-* Total de facturas vencidas
-* Gráficos de tendencias
-* Top 10 clientes
-* Indicadores de salud financiera
-
-RF-015: Exportación de Reportes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Los reportes deben poder exportarse en:
-
-* PDF
-* Excel
-* CSV
-* Envío automático programado por correo
-
-6. Notificaciones
+Autenticación JWT
 -----------------
 
-RF-016: Sistema de Notificaciones
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**JSON Web Tokens**
+~~~~~~~~~~~~~~~~~~~
 
-El sistema debe enviar notificaciones por:
+.. code-block:: python
 
-**Correo electrónico:**
+   from jose import JWTError, jwt
+   from datetime import datetime, timedelta
+   
+   def crear_token(usuario_id: int) -> str:
+       payload = {
+           "sub": str(usuario_id),
+           "exp": datetime.utcnow() + timedelta(hours=24)
+       }
+       return jwt.encode(payload, SECRET_KEY, algorithm="HS256")
 
-* Recordatorios de pago (antes del vencimiento)
-* Avisos de factura vencida
-* Confirmación de pago recibido
-* Resúmenes semanales/mensuales
+Guía de Inicio Rápido
+======================
 
-**Notificaciones en el sistema:**
+Para Usuarios
+-------------
 
-* Alertas de facturas próximas a vencer
-* Notificaciones de pagos recibidos
-* Recordatorios de tareas pendientes
+1. **Registro**
+   
+   * Accede a la app BillCash
+   * Haz clic en "Crear Cuenta"
+   * Completa tus datos
+   * Verifica tu correo electrónico
 
-RF-017: Configuración de Notificaciones
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2. **Primera Transacción**
+   
+   * Vincula una tarjeta o cuenta bancaria
+   * Agrega fondos a tu billetera
+   * Busca un contacto
+   * Envía tu primer pago
 
-Los usuarios deben poder:
+3. **Explora Funcionalidades**
+   
+   * Consulta :doc:`manual_index` para tutoriales detallados
+   * Revisa :doc:`casos_uso` para ejemplos prácticos
 
-* Activar/desactivar tipos de notificaciones
-* Configurar frecuencia de envío
-* Personalizar plantillas de correo
-* Establecer recordatorios automáticos
+Para Desarrolladores
+--------------------
 
-7. Seguridad y Auditoría
-------------------------
+1. **Instalación**
 
-RF-018: Registro de Auditoría
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: bash
 
-El sistema debe mantener un log de:
+   # Clonar repositorio
+   git clone https://github.com/JoelML1/billcash.git
+   cd billcash
+   
+   # Crear entorno virtual
+   python -m venv venv
+   source venv/bin/activate  # Linux/Mac
+   venv\Scripts\activate     # Windows
+   
+   # Instalar dependencias
+   pip install -r requirements.txt
 
-* Todas las acciones de usuarios (login, logout, modificaciones)
-* Cambios en facturas y pagos
-* Acceso a información sensible
-* Timestamp y usuario responsable
-* IP de origen
+2. **Configuración**
 
-RF-019: Respaldo de Datos
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: bash
 
-El sistema debe:
+   # Crear archivo .env
+   cp .env.example .env
+   
+   # Configurar variables
+   DATABASE_URL=postgresql://user:pass@localhost/billcash
+   SECRET_KEY=tu-clave-secreta-muy-segura
+   JWT_EXPIRATION=24
 
-* Realizar respaldos automáticos diarios
-* Permitir respaldos manuales bajo demanda
-* Mantener histórico de respaldos (mínimo 30 días)
-* Facilitar restauración de datos
+3. **Ejecutar**
 
-8. Configuración del Sistema
------------------------------
+.. code-block:: bash
 
-RF-020: Parámetros Generales
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   # Iniciar servidor de desarrollo
+   uvicorn main:app --reload
+   
+   # API disponible en http://localhost:8000
+   # Documentación en http://localhost:8000/docs
 
-Configuración de:
+4. **Explorar API**
+   
+   * Revisa :doc:`api_dashboard` para documentación completa
+   * Prueba endpoints en Swagger UI
+   * Consulta ejemplos de código
 
-* Datos de la empresa (nombre, logo, RFC, dirección)
-* Configuración fiscal (tasas de impuestos)
-* Numeración de facturas (prefijo, longitud, inicio)
-* Moneda predeterminada
-* Formato de fecha y hora
-* Idioma del sistema
+Soporte y Contacto
+==================
 
-RF-021: Plantillas y Formatos
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Documentación**
+   📖 Esta documentación completa
 
-Personalización de:
+**Repositorio**
+   💻 https://github.com/JoelML1/documentacion_billcash
 
-* Plantillas de facturas (HTML/PDF)
-* Plantillas de correos electrónicos
-* Formatos de reportes
-* Logo y colores corporativos
+**Issues**
+   🐛 Reporta problemas en GitHub Issues
 
-Requisitos No Funcionales
-==========================
+**Licencia**
+   📄 MIT License
 
-Rendimiento
------------
+----
 
-* El sistema debe responder en menos de 2 segundos para operaciones comunes
-* Debe soportar al menos 1000 usuarios concurrentes
-* Capacidad de procesar 10,000 facturas por mes
+Índices y Búsqueda
+==================
+
+* :ref:`genindex`
+* :ref:`search`
+
+----
+
+.. note::
+   **Versión:** 1.0.0 | **Última actualización:** Diciembre 2025
+   
+   Para más información, visita la :doc:`api_dashboard` o consulta el :doc:`manual_index`.
 
 Seguridad
 ---------
