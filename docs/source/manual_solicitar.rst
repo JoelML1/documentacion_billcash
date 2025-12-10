@@ -14,6 +14,24 @@ Además de enviar, puedes solicitar dinero a otros usuarios del sistema.
 
 |
 
+Estado de Solicitudes
+======================
+
+Cuando no tienes solicitudes pendientes:
+
+.. image:: _static/solicitudes_vacio.png
+   :width: 800px
+   :align: center
+   :alt: No tienes solicitudes pendientes
+
+|
+
+La pantalla muestra:
+
+* 💰 **Icono de dinero:** Solicitudes de Dinero
+* 📭 **Mensaje:** "No tienes solicitudes pendientes"
+* 🔄 **Botón Volver:** Regresa al dashboard principal
+
 Pasos para solicitar dinero
 ============================
 

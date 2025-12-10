@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>9. Gestión de Tarjetas &#8212; documentación de BillCash - 1.0.0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=8203d6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=86f9e451" />
+    <link rel="stylesheet" type="text/css" href="_static/billcash_modern.css?v=8600a09e" />
+    <script src="_static/documentation_options.js?v=36c4ab74"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=f85f4cfb"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="10. Pago de Servicios" href="manual_servicios.html" />
+    <link rel="prev" title="8. Cartera (Transacciones)" href="manual_cartera.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/billcash_logo.png" alt="Logo" />
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Sistema de gestión de pagos y facturación</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=JoelML1&repo=documentacion_billcash&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegación</h3>
+<p class="caption" role="heading"><span class="caption-text">📱 Manual de Usuario</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="manual_index.html">Manual de Usuario - BillCash</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#bienvenido-al-manual-de-usuario">Bienvenido al Manual de Usuario</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="manual_index.html#contenido-del-manual">Contenido del Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#navegacion-rapida">Navegación Rápida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#informacion-adicional">Información Adicional</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🔧 API REST - Documentación Técnica</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_dashboard.html">Dashboard - API REST</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">📋 Casos de Uso</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="casos_uso.html">Casos de Uso - BillCash</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentación:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="casos_uso.html">Casos de Uso - BillCash</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="manual_index.html">Manual de Usuario - BillCash</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#bienvenido-al-manual-de-usuario">Bienvenido al Manual de Usuario</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="manual_index.html#contenido-del-manual">Contenido del Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#navegacion-rapida">Navegación Rápida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#informacion-adicional">Información Adicional</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="manual_index.html">Manual de Usuario - BillCash</a><ul>
+      <li>Previous: <a href="manual_cartera.html" title="capítulo anterior"><span class="section-number">8. </span>Cartera (Transacciones)</a></li>
+      <li>Next: <a href="manual_servicios.html" title="próximo capítulo"><span class="section-number">10. </span>Pago de Servicios</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="gestion-de-tarjetas">
+<h1><span class="section-number">9. </span>Gestión de Tarjetas<a class="headerlink" href="#gestion-de-tarjetas" title="Link to this heading">¶</a></h1>
+<section id="administra-tus-tarjetas-de-pago">
+<h2><span class="section-number">9.1. </span>Administra tus tarjetas de pago<a class="headerlink" href="#administra-tus-tarjetas-de-pago" title="Link to this heading">¶</a></h2>
+<p>BillCash te permite vincular y administrar múltiples tarjetas de débito y crédito
+para facilitar tus transacciones.</p>
+<a class="reference internal image-reference" href="_static/mis_tarjetas.png"><img alt="Mis Tarjetas en BillCash" class="align-center" src="_static/mis_tarjetas.png" style="width: 800px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="tus-tarjetas-vinculadas">
+<h2><span class="section-number">9.2. </span>Tus Tarjetas Vinculadas<a class="headerlink" href="#tus-tarjetas-vinculadas" title="Link to this heading">¶</a></h2>
+<p>En la pantalla de «Mis Tarjetas» puedes ver:</p>
+<ul class="simple">
+<li><p><strong>Tipo de tarjeta:</strong> CRÉDITO o DÉBITO</p></li>
+<li><p><strong>Número de tarjeta:</strong> Los últimos 4 dígitos (formato enmascarado)</p></li>
+<li><p><strong>Titular:</strong> Nombre del propietario de la tarjeta</p></li>
+<li><p><strong>Fecha de vencimiento:</strong> Válida hasta (mes/año)</p></li>
+<li><p><strong>CVV:</strong> Código de seguridad (oculto por seguridad)</p></li>
+</ul>
+</section>
+<section id="acciones-disponibles">
+<h2><span class="section-number">9.3. </span>Acciones Disponibles<a class="headerlink" href="#acciones-disponibles" title="Link to this heading">¶</a></h2>
+<p>Para cada tarjeta puedes:</p>
+<dl class="simple">
+<dt>🔒 <strong>Bloquear</strong></dt><dd><p>Temporalmente deshabilita la tarjeta para transacciones</p>
+<ul class="simple">
+<li><p>Haz clic en el botón naranja «🔓 Bloquear»</p></li>
+<li><p>La tarjeta quedará inactiva hasta que la desbloquees</p></li>
+<li><p>Útil si sospechas de actividad no autorizada</p></li>
+</ul>
+</dd>
+<dt>🗑️ <strong>Eliminar</strong></dt><dd><p>Elimina permanentemente la tarjeta de tu cuenta</p>
+<ul class="simple">
+<li><p>Haz clic en el botón rojo «🗑️ Eliminar»</p></li>
+<li><p>Confirma la eliminación</p></li>
+<li><p>Esta acción no se puede deshacer</p></li>
+</ul>
+</dd>
+<dt>➕ <strong>Solicitar Nueva Tarjeta</strong></dt><dd><p>Agrega una nueva tarjeta a tu billetera</p>
+<ul class="simple">
+<li><p>Haz clic en el botón verde «+ Solicitar Nueva Tarjeta»</p></li>
+<li><p>Completa los datos de la tarjeta</p></li>
+<li><p>Verifica la información y confirma</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="agregar-una-nueva-tarjeta">
+<h2><span class="section-number">9.4. </span>Agregar una Nueva Tarjeta<a class="headerlink" href="#agregar-una-nueva-tarjeta" title="Link to this heading">¶</a></h2>
+<p>Pasos para vincular una tarjeta:</p>
+<ol class="arabic">
+<li><p><strong>Haz clic en «+ Solicitar Nueva Tarjeta»</strong></p>
+<p>Se abrirá un formulario de registro</p>
+</li>
+<li><p><strong>Completa los datos:</strong></p>
+<ul class="simple">
+<li><p>Número de tarjeta (16 dígitos)</p></li>
+<li><p>Nombre del titular (como aparece en la tarjeta)</p></li>
+<li><p>Fecha de vencimiento (MM/AA)</p></li>
+<li><p>CVV (3 o 4 dígitos en el reverso)</p></li>
+<li><p>Tipo de tarjeta (Crédito o Débito)</p></li>
+</ul>
+</li>
+<li><p><strong>Verifica la información</strong></p>
+<p>Asegúrate de que todos los datos sean correctos</p>
+</li>
+<li><p><strong>Confirma</strong></p>
+<p>Tu tarjeta será validada y agregada a tu cuenta</p>
+</li>
+</ol>
+</section>
+<section id="seguridad-de-las-tarjetas">
+<h2><span class="section-number">9.5. </span>Seguridad de las Tarjetas<a class="headerlink" href="#seguridad-de-las-tarjetas" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt>🔐 <strong>Protección de Datos</strong></dt><dd><ul class="simple">
+<li><p>Todos los datos se almacenan encriptados</p></li>
+<li><p>El CVV nunca se muestra después del registro</p></li>
+<li><p>Cumplimos con estándares PCI-DSS</p></li>
+</ul>
+</dd>
+<dt>🛡️ <strong>Detección de Fraude</strong></dt><dd><ul class="simple">
+<li><p>Monitoreo automático de transacciones sospechosas</p></li>
+<li><p>Notificaciones de actividad inusual</p></li>
+<li><p>Bloqueo automático ante intentos no autorizados</p></li>
+</ul>
+</dd>
+<dt>💳 <strong>Mejores Prácticas</strong></dt><dd><ul class="simple">
+<li><p>No compartas tu CVV con nadie</p></li>
+<li><p>Bloquea tarjetas que no uses frecuentemente</p></li>
+<li><p>Revisa regularmente tus transacciones</p></li>
+<li><p>Actualiza tarjetas vencidas</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="volver-al-dashboard">
+<h2><span class="section-number">9.6. </span>Volver al Dashboard<a class="headerlink" href="#volver-al-dashboard" title="Link to this heading">¶</a></h2>
+<p>Para regresar al panel principal:</p>
+<ul class="simple">
+<li><p>Haz clic en el botón «← Volver al Dashboard»</p></li>
+<li><p>También puedes usar el menú de navegación superior</p></li>
+</ul>
+<hr class="docutils" />
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p><strong>Recomendación:</strong> Mantén al menos una tarjeta activa para facilitar
+tus transacciones en BillCash.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p><strong>Importante:</strong> Al eliminar una tarjeta, perderás el historial asociado
+a esa tarjeta. Descarga tus reportes antes de eliminarla.</p>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;2025, joel medina, juan salinas, david torres.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/manual_tarjetas.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -28,10 +28,13 @@ Contenido del Manual
    manual_introduccion
    manual_registro
    manual_login
+   manual_recuperar_contrasena
    manual_home
    manual_enviar
    manual_solicitar
    manual_cartera
+   manual_tarjetas
+   manual_servicios
 
 ----
 
@@ -43,6 +46,7 @@ Navegación Rápida
 * :doc:`manual_introduccion` - Conoce BillCash y sus características
 * :doc:`manual_registro` - Crea tu cuenta
 * :doc:`manual_login` - Accede al sistema
+* :doc:`manual_recuperar_contrasena` - Recupera tu contraseña
 
 💰 **Transacciones:**
 
@@ -51,6 +55,11 @@ Navegación Rápida
 * :doc:`manual_solicitar` - Solicita dinero
 * :doc:`manual_cartera` - Consulta tu historial
 
+💳 **Gestión Financiera:**
+
+* :doc:`manual_tarjetas` - Administra tus tarjetas
+* :doc:`manual_servicios` - Paga servicios (Luz, Agua, Gas, etc.)
+
 ----
 
 Información Adicional
@@ -58,12 +67,12 @@ Información Adicional
 
 **Versión actual:** 1.0.0
 
-**Última actualización:** Octubre 2025
+**Última actualización:** Diciembre 2025
 
 **Soporte:**
 
 * Email: soporte@billcash.com
-* Chat en vivo disponible en la aplicación
+* Documentación completa: https://joelml1.github.io/documentacion_billcash/
 
 ----
 

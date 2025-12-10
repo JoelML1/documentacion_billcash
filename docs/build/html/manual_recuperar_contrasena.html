@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Recuperación de Contraseña &#8212; documentación de BillCash - 1.0.0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=8203d6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=86f9e451" />
+    <link rel="stylesheet" type="text/css" href="_static/billcash_modern.css?v=8600a09e" />
+    <script src="_static/documentation_options.js?v=36c4ab74"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=f85f4cfb"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="5. Home (Dashboard Principal)" href="manual_home.html" />
+    <link rel="prev" title="3. Iniciar Sesión" href="manual_login.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/billcash_logo.png" alt="Logo" />
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Sistema de gestión de pagos y facturación</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=JoelML1&repo=documentacion_billcash&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegación</h3>
+<p class="caption" role="heading"><span class="caption-text">📱 Manual de Usuario</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="manual_index.html">Manual de Usuario - BillCash</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#bienvenido-al-manual-de-usuario">Bienvenido al Manual de Usuario</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="manual_index.html#contenido-del-manual">Contenido del Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#navegacion-rapida">Navegación Rápida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#informacion-adicional">Información Adicional</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🔧 API REST - Documentación Técnica</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_dashboard.html">Dashboard - API REST</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">📋 Casos de Uso</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="casos_uso.html">Casos de Uso - BillCash</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentación:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="casos_uso.html">Casos de Uso - BillCash</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="manual_index.html">Manual de Usuario - BillCash</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#bienvenido-al-manual-de-usuario">Bienvenido al Manual de Usuario</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="manual_index.html#contenido-del-manual">Contenido del Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#navegacion-rapida">Navegación Rápida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#informacion-adicional">Información Adicional</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="manual_index.html">Manual de Usuario - BillCash</a><ul>
+      <li>Previous: <a href="manual_login.html" title="capítulo anterior"><span class="section-number">3. </span>Iniciar Sesión</a></li>
+      <li>Next: <a href="manual_home.html" title="próximo capítulo"><span class="section-number">5. </span>Home (Dashboard Principal)</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="recuperacion-de-contrasena">
+<h1><span class="section-number">4. </span>Recuperación de Contraseña<a class="headerlink" href="#recuperacion-de-contrasena" title="Link to this heading">¶</a></h1>
+<section id="olvidaste-tu-contrasena">
+<h2><span class="section-number">4.1. </span>¿Olvidaste tu contraseña?<a class="headerlink" href="#olvidaste-tu-contrasena" title="Link to this heading">¶</a></h2>
+<p>Si olvidaste tu contraseña de BillCash, puedes restablecerla fácilmente
+siguiendo estos pasos.</p>
+</section>
+<section id="solicitar-restablecimiento">
+<h2><span class="section-number">4.2. </span>Solicitar Restablecimiento<a class="headerlink" href="#solicitar-restablecimiento" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p><strong>Accede al Login</strong></p>
+<p>Ve a la pantalla de inicio de sesión de BillCash</p>
+</li>
+<li><p><strong>Haz clic en «¿Olvidaste tu contraseña?»</strong></p>
+<p>Encontrarás este enlace debajo del botón de login</p>
+</li>
+<li><p><strong>Ingresa tu correo electrónico</strong></p>
+<p>Escribe el email asociado a tu cuenta de BillCash</p>
+</li>
+<li><p><strong>Haz clic en «Enviar»</strong></p>
+<p>Recibirás un correo con instrucciones</p>
+</li>
+</ol>
+</section>
+<section id="email-de-recuperacion">
+<h2><span class="section-number">4.3. </span>Email de Recuperación<a class="headerlink" href="#email-de-recuperacion" title="Link to this heading">¶</a></h2>
+<p>Recibirás un correo como este:</p>
+<a class="reference internal image-reference" href="_static/recuperar_contrasena_email.png"><img alt="Email de Recuperación de Contraseña" class="align-center" src="_static/recuperar_contrasena_email.png" style="width: 700px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>El correo contiene:</p>
+<p>📧 <strong>Asunto:</strong> 🔒 Recuperación de Contraseña</p>
+<p><strong>Contenido:</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Hola Juan Diego,
+
+Recibimos una solicitud para restablecer la contraseña de tu cuenta de BillCash.
+
+Haz clic en el botón de abajo para crear una nueva contraseña:
+
+[Restablecer Contraseña]
+
+⚠️ Importante: Este enlace expira en 1 hora por seguridad.
+
+Si no puedes hacer clic en el botón, copia y pega este enlace en tu navegador:
+https://gleaming-vision-production.up.railway.app/restablecer-contrasena?token=...
+
+¿No solicitaste este cambio?
+Si no fuiste tú, ignora este correo. Tu contraseña permanecerá segura.
+</pre></div>
+</div>
+</section>
+<section id="crear-nueva-contrasena">
+<h2><span class="section-number">4.4. </span>Crear Nueva Contraseña<a class="headerlink" href="#crear-nueva-contrasena" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p><strong>Haz clic en «Restablecer Contraseña»</strong></p>
+<p>Desde el correo o copia el enlace en tu navegador</p>
+</li>
+<li><p><strong>Completa el formulario</strong></p></li>
+</ol>
+<a class="reference internal image-reference" href="_static/restablecer_contrasena.png"><img alt="Formulario de Restablecer Contraseña" class="align-center" src="_static/restablecer_contrasena.png" style="width: 600px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Ingresa los siguientes datos:</p>
+<ul class="simple">
+<li><p><strong>Nueva Contraseña:</strong> Tu nueva contraseña segura</p>
+<ul>
+<li><p>Mínimo 8 caracteres</p></li>
+<li><p>Al menos una mayúscula</p></li>
+<li><p>Al menos un número</p></li>
+<li><p>Caracteres especiales (recomendado)</p></li>
+</ul>
+</li>
+<li><p><strong>Confirmar Contraseña:</strong> Escribe nuevamente la contraseña</p></li>
+</ul>
+<p>👁️ <strong>Mostrar/Ocultar:</strong> Usa el ícono del ojo para ver la contraseña mientras escribes</p>
+<ol class="arabic" start="3">
+<li><p><strong>Haz clic en «Restablecer Contraseña»</strong></p>
+<p>El botón verde procesará el cambio</p>
+</li>
+</ol>
+</section>
+<section id="confirmacion">
+<h2><span class="section-number">4.5. </span>Confirmación<a class="headerlink" href="#confirmacion" title="Link to this heading">¶</a></h2>
+<p>Si todo es correcto, verás esta pantalla:</p>
+<a class="reference internal image-reference" href="_static/contrasena_actualizada.png"><img alt="Contraseña Actualizada Exitosamente" class="align-center" src="_static/contrasena_actualizada.png" style="width: 600px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>¡Contraseña Actualizada!</strong></p>
+<p>✅ Tu contraseña ha sido restablecida exitosamente.</p>
+<ul class="simple">
+<li><p>Serás redirigido al login automáticamente en 3 segundos</p></li>
+<li><p>O haz clic en «Ir al Login Ahora»</p></li>
+</ul>
+</section>
+<section id="iniciar-sesion">
+<h2><span class="section-number">4.6. </span>Iniciar Sesión<a class="headerlink" href="#iniciar-sesion" title="Link to this heading">¶</a></h2>
+<p>Una vez confirmado:</p>
+<ol class="arabic simple">
+<li><p>Serás redirigido a la pantalla de login</p></li>
+<li><p>Ingresa tu correo electrónico</p></li>
+<li><p>Usa tu nueva contraseña</p></li>
+<li><p>Haz clic en «Iniciar Sesión»</p></li>
+</ol>
+</section>
+<section id="seguridad">
+<h2><span class="section-number">4.7. </span>Seguridad<a class="headerlink" href="#seguridad" title="Link to this heading">¶</a></h2>
+<p>🔐 <strong>Recomendaciones:</strong></p>
+<ul class="simple">
+<li><p><strong>Usa una contraseña fuerte:</strong> Combina letras, números y símbolos</p></li>
+<li><p><strong>No reutilices contraseñas:</strong> Usa una única para BillCash</p></li>
+<li><p><strong>Cambia tu contraseña regularmente:</strong> Al menos cada 3-6 meses</p></li>
+<li><p><strong>No compartas tu contraseña:</strong> BillCash nunca te la solicitará</p></li>
+</ul>
+<p>🛡️ <strong>Protección:</strong></p>
+<ul class="simple">
+<li><p>Los enlaces expiran en 1 hora para tu seguridad</p></li>
+<li><p>Las contraseñas se almacenan encriptadas</p></li>
+<li><p>Recibes notificación de cambios de contraseña</p></li>
+<li><p>Puedes activar autenticación de dos factores</p></li>
+</ul>
+</section>
+<section id="problemas-comunes">
+<h2><span class="section-number">4.8. </span>Problemas Comunes<a class="headerlink" href="#problemas-comunes" title="Link to this heading">¶</a></h2>
+<p>❌ <strong>«El enlace ha expirado»</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Los enlaces son válidos solo por 1 hora</p></li>
+<li><p>Solicita un nuevo restablecimiento desde el login</p></li>
+</ul>
+</div></blockquote>
+<p>❌ <strong>«No recibí el correo»</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Revisa tu carpeta de spam/correo no deseado</p></li>
+<li><p>Verifica que el email sea correcto</p></li>
+<li><p>Espera unos minutos (puede demorar)</p></li>
+<li><p>Solicita el envío nuevamente</p></li>
+</ul>
+</div></blockquote>
+<p>❌ <strong>«Las contraseñas no coinciden»</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Asegúrate de escribir exactamente la misma contraseña en ambos campos</p></li>
+<li><p>Usa el ícono del ojo para verificar</p></li>
+</ul>
+</div></blockquote>
+<p>❌ <strong>«La contraseña no es segura»</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Debe tener al menos 8 caracteres</p></li>
+<li><p>Incluye mayúsculas, minúsculas y números</p></li>
+<li><p>Agrega caracteres especiales (&#64;, #, $, etc.)</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="volver-al-login">
+<h2><span class="section-number">4.9. </span>Volver al Login<a class="headerlink" href="#volver-al-login" title="Link to this heading">¶</a></h2>
+<p>Si no deseas restablecer la contraseña:</p>
+<ul class="simple">
+<li><p>Haz clic en «Volver al Login»</p></li>
+<li><p>Regresarás a la pantalla de inicio de sesión</p></li>
+</ul>
+<hr class="docutils" />
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p><strong>Importante:</strong> Si no solicitaste el cambio de contraseña, ignora el correo
+y contacta a soporte inmediatamente: <a class="reference external" href="mailto:soporte&#37;&#52;&#48;billcash&#46;com">soporte<span>&#64;</span>billcash<span>&#46;</span>com</a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p><strong>Consejo:</strong> Guarda tu contraseña en un gestor de contraseñas seguro
+para no olvidarla nuevamente.</p>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;2025, joel medina, juan salinas, david torres.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/manual_recuperar_contrasena.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

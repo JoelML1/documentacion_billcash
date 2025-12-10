@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>10. Pago de Servicios &#8212; documentación de BillCash - 1.0.0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=8203d6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=86f9e451" />
+    <link rel="stylesheet" type="text/css" href="_static/billcash_modern.css?v=8600a09e" />
+    <script src="_static/documentation_options.js?v=36c4ab74"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=f85f4cfb"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Dashboard - API REST" href="api_dashboard.html" />
+    <link rel="prev" title="9. Gestión de Tarjetas" href="manual_tarjetas.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/billcash_logo.png" alt="Logo" />
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Sistema de gestión de pagos y facturación</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=JoelML1&repo=documentacion_billcash&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegación</h3>
+<p class="caption" role="heading"><span class="caption-text">📱 Manual de Usuario</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="manual_index.html">Manual de Usuario - BillCash</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#bienvenido-al-manual-de-usuario">Bienvenido al Manual de Usuario</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="manual_index.html#contenido-del-manual">Contenido del Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#navegacion-rapida">Navegación Rápida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#informacion-adicional">Información Adicional</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🔧 API REST - Documentación Técnica</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_dashboard.html">Dashboard - API REST</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">📋 Casos de Uso</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="casos_uso.html">Casos de Uso - BillCash</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentación:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="casos_uso.html">Casos de Uso - BillCash</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="manual_index.html">Manual de Usuario - BillCash</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#bienvenido-al-manual-de-usuario">Bienvenido al Manual de Usuario</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="manual_index.html#contenido-del-manual">Contenido del Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#navegacion-rapida">Navegación Rápida</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual_index.html#informacion-adicional">Información Adicional</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="manual_index.html">Manual de Usuario - BillCash</a><ul>
+      <li>Previous: <a href="manual_tarjetas.html" title="capítulo anterior"><span class="section-number">9. </span>Gestión de Tarjetas</a></li>
+      <li>Next: <a href="api_dashboard.html" title="próximo capítulo">Dashboard - API REST</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="pago-de-servicios">
+<h1><span class="section-number">10. </span>Pago de Servicios<a class="headerlink" href="#pago-de-servicios" title="Link to this heading">¶</a></h1>
+<section id="paga-tus-servicios-desde-billcash">
+<h2><span class="section-number">10.1. </span>Paga tus servicios desde BillCash<a class="headerlink" href="#paga-tus-servicios-desde-billcash" title="Link to this heading">¶</a></h2>
+<p>BillCash te permite pagar diversos servicios públicos y privados directamente
+desde tu billetera digital de forma rápida y segura.</p>
+<a class="reference internal image-reference" href="_static/pago_servicios.png"><img alt="Pago de Servicios en BillCash" class="align-center" src="_static/pago_servicios.png" style="width: 800px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="servicios-disponibles">
+<h2><span class="section-number">10.2. </span>Servicios Disponibles<a class="headerlink" href="#servicios-disponibles" title="Link to this heading">¶</a></h2>
+<p>Puedes pagar los siguientes servicios:</p>
+<dl class="simple">
+<dt>💡 <strong>Luz (Energía Eléctrica)</strong></dt><dd><ul class="simple">
+<li><p>Empresa de energía</p></li>
+<li><p>Pago de facturas mensuales</p></li>
+<li><p>Consulta de saldo</p></li>
+</ul>
+</dd>
+<dt>💧 <strong>Agua</strong></dt><dd><ul class="simple">
+<li><p>Servicio de acueducto</p></li>
+<li><p>Pago de consumo mensual</p></li>
+<li><p>Historial de pagos</p></li>
+</ul>
+</dd>
+<dt>🔥 <strong>Gas</strong></dt><dd><ul class="simple">
+<li><p>Gas natural o propano</p></li>
+<li><p>Facturas domiciliarias</p></li>
+<li><p>Recargas de gas</p></li>
+</ul>
+</dd>
+<dt>📡 <strong>Internet</strong></dt><dd><ul class="simple">
+<li><p>Proveedores de servicio de internet</p></li>
+<li><p>Planes de datos</p></li>
+<li><p>Renovación de servicio</p></li>
+</ul>
+</dd>
+<dt>📺 <strong>Televisión</strong></dt><dd><ul class="simple">
+<li><p>TV por cable</p></li>
+<li><p>Plataformas de streaming</p></li>
+<li><p>Paquetes de canales</p></li>
+</ul>
+</dd>
+<dt>📞 <strong>Teléfono</strong></dt><dd><ul class="simple">
+<li><p>Línea fija</p></li>
+<li><p>Planes telefónicos</p></li>
+<li><p>Servicios adicionales</p></li>
+</ul>
+</dd>
+<dt>📱 <strong>Celular</strong></dt><dd><ul class="simple">
+<li><p>Recargas de saldo</p></li>
+<li><p>Pago de planes pospago</p></li>
+<li><p>Paquetes de datos</p></li>
+</ul>
+</dd>
+<dt>💵 <strong>Impuestos</strong></dt><dd><ul class="simple">
+<li><p>Impuesto predial</p></li>
+<li><p>Impuesto vehicular</p></li>
+<li><p>Otros tributos</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="como-pagar-un-servicio">
+<h2><span class="section-number">10.3. </span>Cómo Pagar un Servicio<a class="headerlink" href="#como-pagar-un-servicio" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p><strong>Selecciona el servicio</strong></p>
+<p>Haz clic en el ícono del servicio que deseas pagar (Luz, Agua, Gas, etc.)</p>
+</li>
+<li><p><strong>Tu cuenta disponible</strong></p>
+<p>En la parte superior verás tu saldo disponible:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>💳 Tus cuentas disponibles:
+BC00000059278658 $8.853.782 COP
+</pre></div>
+</div>
+</li>
+<li><p><strong>Ingresa los datos del servicio</strong></p>
+<ul class="simple">
+<li><p>Número de cuenta o contrato</p></li>
+<li><p>Valor a pagar (si no está prefijado)</p></li>
+<li><p>Referencia o número de factura</p></li>
+</ul>
+</li>
+<li><p><strong>Verifica el monto</strong></p>
+<p>Revisa que el monto y los datos sean correctos</p>
+</li>
+<li><p><strong>Confirma el pago</strong></p>
+<ul class="simple">
+<li><p>Autoriza la transacción</p></li>
+<li><p>Recibirás una confirmación inmediata</p></li>
+<li><p>Se generará un comprobante digital</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="confirmacion-y-comprobante">
+<h2><span class="section-number">10.4. </span>Confirmación y Comprobante<a class="headerlink" href="#confirmacion-y-comprobante" title="Link to this heading">¶</a></h2>
+<p>Después de realizar el pago:</p>
+<dl class="simple">
+<dt>✅ <strong>Confirmación Inmediata</strong></dt><dd><ul class="simple">
+<li><p>Notificación en pantalla</p></li>
+<li><p>Email con detalles de la transacción</p></li>
+<li><p>Comprobante descargable en PDF</p></li>
+</ul>
+</dd>
+<dt>📊 <strong>Información del Comprobante:</strong></dt><dd><ul class="simple">
+<li><p>Fecha y hora de la transacción</p></li>
+<li><p>Servicio pagado</p></li>
+<li><p>Monto</p></li>
+<li><p>Número de referencia</p></li>
+<li><p>Cuenta origen</p></li>
+</ul>
+</dd>
+<dt>🔍 <strong>Consulta de Historial:</strong></dt><dd><ul class="simple">
+<li><p>Accede a «Movimientos» para ver tus pagos</p></li>
+<li><p>Filtra por tipo «Pago de Servicio»</p></li>
+<li><p>Descarga reportes mensuales</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="pagos-recurrentes">
+<h2><span class="section-number">10.5. </span>Pagos Recurrentes<a class="headerlink" href="#pagos-recurrentes" title="Link to this heading">¶</a></h2>
+<p>Programa pagos automáticos:</p>
+<dl class="simple">
+<dt>⚙️ <strong>Configurar Pago Automático:</strong></dt><dd><ol class="arabic simple">
+<li><p>Selecciona el servicio</p></li>
+<li><p>Activa «Pago Recurrente»</p></li>
+<li><p>Define la fecha de pago (día del mes)</p></li>
+<li><p>Confirma la configuración</p></li>
+</ol>
+</dd>
+<dt>✨ <strong>Beneficios:</strong></dt><dd><ul class="simple">
+<li><p>Nunca olvides pagar tus servicios</p></li>
+<li><p>Evita recargos por mora</p></li>
+<li><p>Ahorra tiempo cada mes</p></li>
+<li><p>Recibe recordatorios previos</p></li>
+</ul>
+</dd>
+<dt>🛑 <strong>Cancelar o Modificar:</strong></dt><dd><ul class="simple">
+<li><p>Accede a «Servicios Recurrentes»</p></li>
+<li><p>Edita la configuración</p></li>
+<li><p>Cancela cuando desees</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="beneficios-del-pago-en-billcash">
+<h2><span class="section-number">10.6. </span>Beneficios del Pago en BillCash<a class="headerlink" href="#beneficios-del-pago-en-billcash" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt>✅ <strong>Comodidad</strong></dt><dd><ul class="simple">
+<li><p>Paga desde cualquier lugar</p></li>
+<li><p>Disponible 24/7</p></li>
+<li><p>Sin filas ni desplazamientos</p></li>
+</ul>
+</dd>
+<dt>💰 <strong>Sin Comisiones Adicionales</strong></dt><dd><ul class="simple">
+<li><p>Pagas solo el valor del servicio</p></li>
+<li><p>No hay cargos ocultos</p></li>
+<li><p>Usa el saldo de tu billetera</p></li>
+</ul>
+</dd>
+<dt>🔔 <strong>Notificaciones</strong></dt><dd><ul class="simple">
+<li><p>Recordatorios de vencimiento</p></li>
+<li><p>Confirmación de pago</p></li>
+<li><p>Alertas de servicios próximos a vencer</p></li>
+</ul>
+</dd>
+<dt>🧾 <strong>Organización</strong></dt><dd><ul class="simple">
+<li><p>Todo tu historial en un solo lugar</p></li>
+<li><p>Reportes mensuales automáticos</p></li>
+<li><p>Exporta tus comprobantes</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="seguridad-en-pagos">
+<h2><span class="section-number">10.7. </span>Seguridad en Pagos<a class="headerlink" href="#seguridad-en-pagos" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt>🔒 <strong>Protección de Datos</strong></dt><dd><ul class="simple">
+<li><p>Conexión encriptada (SSL)</p></li>
+<li><p>Validación de dos factores</p></li>
+<li><p>Datos bancarios seguros</p></li>
+</ul>
+</dd>
+<dt>🛡️ <strong>Verificación de Pagos</strong></dt><dd><ul class="simple">
+<li><p>Confirmación antes de procesar</p></li>
+<li><p>Validación con empresas prestadoras</p></li>
+<li><p>Garantía de entrega del pago</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="volver-al-dashboard">
+<h2><span class="section-number">10.8. </span>Volver al Dashboard<a class="headerlink" href="#volver-al-dashboard" title="Link to this heading">¶</a></h2>
+<p>Para regresar al menú principal:</p>
+<ul class="simple">
+<li><p>Haz clic en el botón «Volver» en la parte superior</p></li>
+<li><p>O usa el menú de navegación</p></li>
+</ul>
+<hr class="docutils" />
+<div class="admonition tip">
+<p class="admonition-title">Truco</p>
+<p><strong>Recomendación:</strong> Guarda tus números de cuenta favoritos para
+agilizar futuros pagos.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p><strong>Importante:</strong> Verifica siempre el número de cuenta antes de
+confirmar el pago para evitar errores.</p>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;2025, joel medina, juan salinas, david torres.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/manual_servicios.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -2,17 +2,71 @@
 Cartera (Transacciones)
 =======================
 
-Cómo consultar tu historial de transacciones
-=============================================
+Historial de Movimientos
+=========================
 
 La Cartera te permite ver todas tus transacciones realizadas y gestionar tu dinero.
 
-.. image:: _static/cartera.png
+.. image:: _static/movimientos.png
    :width: 800px
    :align: center
-   :alt: Pantalla de Cartera
+   :alt: Historial de Movimientos
 
 |
+
+Detalles de tus Movimientos
+============================
+
+En la pantalla de Movimientos puedes ver todas tus transacciones con información detallada:
+
+**Columnas mostradas:**
+
+📅 **Fecha**
+   * Fecha y hora exacta de la transacción
+   * Formato: DD/MM/AAAA, HH:MM a.m./p.m.
+
+🔄 **Tipo**
+   * transferencia - Envío o recepción de dinero
+   * solicitud - Solicitud aceptada
+   * pago - Pago de servicios
+
+💵 **Monto (COP)**
+   * En **rojo** (-): Dinero enviado/gastado
+   * En **verde** (+): Dinero recibido
+   * Formato: -1.000.000,00 o +50.000,00
+
+📝 **Descripción**
+   * Detalles de la transacción
+   * Destinatario o remitente
+   * Número de cuenta
+   * Concepto del pago
+
+Ejemplo de Transacciones
+=========================
+
+Según la imagen, puedes ver transacciones como:
+
+**Envíos:**
+
+.. code-block:: text
+
+   10/12/2025, 12:01:00 p.m.  | transferencia | -1.000.000,00
+   Transferencia enviada a cuenta BC00000872557: Transferencia
+
+**Recepciones:**
+
+.. code-block:: text
+
+   27/11/2025, 9:20:45 p.m.  | transferencia | +50.000,00
+   Solicitud aceptada: Dinero recibido de kevin zzz.
+
+**Solicitudes Aceptadas:**
+
+.. code-block:: text
+
+   10/12/2025, 11:59:52 a.m. | transferencia | -1.000.000,00
+   Solicitud aceptada: Dinero enviado a Santiago Restrepo. 
+   hero necesito comer
 
 Acceso a la Cartera
 ===================
